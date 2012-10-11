@@ -10,7 +10,5 @@ namespace Infnet.EngSoftSistBancario.Modelo
         public string Nome { get; set; }
         public List<Endereco> Enderecos { get; set; }
         public List<Telefone> Telefones { get; set; }
-       
-        
     }
 }

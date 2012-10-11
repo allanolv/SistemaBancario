@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{47081BD5-01F4-4283-8149-6E2B41879C50}</ProjectGuid>
+    <ProjectGuid>{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Infnet.EngSoftSistBancario.Modelo</RootNamespace>
-    <AssemblyName>Infnet.EngSoftSistBancario.Modelo</AssemblyName>
+    <RootNamespace>Infnet.EngSoftSistBancario.Repositorio</RootNamespace>
+    <AssemblyName>Infnet.EngSoftSistBancario.Repositorio</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,21 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Comprovante.cs" />
-    <Compile Include="Deposito.cs" />
-    <Compile Include="Endereco.cs" />
-    <Compile Include="Extrato.cs" />
-    <Compile Include="PessoaFisica.cs" />
-    <Compile Include="PessoaJuridica.cs" />
+    <Compile Include="RepositorioTransacaoBancaria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Saque.cs" />
-    <Compile Include="Telefone.cs" />
-    <Compile Include="TransacaoBancaria.cs" />
-    <Compile Include="Transferencia.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DiagramadeClasse.cd" />
+    <ProjectReference Include="..\Infnet.EngSoftSistBancario.Modelo\Infnet.EngSoftSistBancario.Modelo.csproj">
+      <Project>{47081BD5-01F4-4283-8149-6E2B41879C50}</Project>
+      <Name>Infnet.EngSoftSistBancario.Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

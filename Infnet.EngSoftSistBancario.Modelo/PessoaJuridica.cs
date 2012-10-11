@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public class Fisica : Cliente 
+    public class PessoaJuridica : Cliente
     {
-        public decimal Renda { get; set; }
-        public int CPF { get; set; } 
+        public String CNPJ { get; set; }
+        public Decimal Receita { get; set; }
     }
 }

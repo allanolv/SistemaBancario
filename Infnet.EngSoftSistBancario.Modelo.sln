@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infnet.EngSoftSistBancario.Modelo", "Infnet.EngSoftSistBancario.Modelo\Infnet.EngSoftSistBancario.Modelo.csproj", "{47081BD5-01F4-4283-8149-6E2B41879C50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infnet.EngSoftSistBancario.Repositorio", "Infnet.EngSoftSistBancario.Repositorio\Infnet.EngSoftSistBancario.Repositorio.csproj", "{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{47081BD5-01F4-4283-8149-6E2B41879C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47081BD5-01F4-4283-8149-6E2B41879C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47081BD5-01F4-4283-8149-6E2B41879C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
