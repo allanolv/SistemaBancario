@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.Banco" Collapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACCAAAAAAAAAAEQAAAAAAAAAAA=</HashCode>
+      <FileName>Banco\Banco.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cliente" />
+      <Property Name="ServicoAnaliseClientePotencial" />
+      <Property Name="OrdemJuridica" />
+      <Property Name="ContaCorrente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.ContaCorrente" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Banco\ContaCorrente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Banco" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.Especial" Collapsed="true">
+    <Position X="16.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Banco\Especial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.Normal" Collapsed="true">
+    <Position X="12.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Banco\Normal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.OrdemJuridica" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Banco\OrdemJuridica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.ServicoAnaliseClientePotencial" Collapsed="true">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Banco\ServicoAnaliseClientePotencial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Clientes.Cliente" Collapsed="true">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABgAAAAAAAAAAAAAAAAAgAAAEAAAAAAAEAEAA=</HashCode>
+      <FileName>Clientes\Cliente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Banco" />
+      <Property Name="TransacaoBancaria" />
+      <Property Name="ContaCorrente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Clientes.Endereco" Collapsed="true">
+    <Position X="3.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAABAACIAAACAgACAAAAAAAAAAAAAgAABAAA=</HashCode>
+      <FileName>Clientes\Endereco.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cliente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Clientes.PessoaFisica" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Clientes\PessoaFisica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Clientes.PessoaJuridica" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Clientes\PessoaJuridica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Clientes.Telefone" Collapsed="true">
+    <Position X="1.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAAAABAAQ=</HashCode>
+      <FileName>Clientes\Telefone.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cliente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.Clientes.Repositorio.RepositorioDeClientes" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAACAAACQAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Clientes\Repositorio\RepositorioDeClientes.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cliente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.Comprovante" Collapsed="true">
+    <Position X="10.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TransacoesBancarias\Comprovante.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.Deposito" Collapsed="true">
+    <Position X="8.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TransacoesBancarias\Deposito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.Extrato" Collapsed="true">
+    <Position X="11" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TransacoesBancarias\Extrato.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.Saque" Collapsed="true">
+    <Position X="4.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TransacoesBancarias\Saque.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.TransacaoBancaria" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>TransacoesBancarias\TransacaoBancaria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Comprovante" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.Transferencia" Collapsed="true">
+    <Position X="6.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TransacoesBancarias\Transferencia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.Repositorio.RepositorioDeTransacoesBancarias" Collapsed="true">
+    <Position X="4.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAQABAAAABAQAAAAAA=</HashCode>
+      <FileName>TransacoesBancarias\Repositorio\RepositorioDeTransacoesBancarias.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TransacaoBancaria" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
