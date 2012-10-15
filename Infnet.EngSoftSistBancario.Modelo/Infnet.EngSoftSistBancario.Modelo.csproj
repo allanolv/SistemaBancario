@@ -8,7 +8,7 @@
     <ProjectGuid>{47081BD5-01F4-4283-8149-6E2B41879C50}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Infnet.EngSoftSistBancario.Modelo</RootNamespace>
+    <RootNamespace>inf.EngSoftSistBancario.Modelo</RootNamespace>
     <AssemblyName>Infnet.EngSoftSistBancario.Modelo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -40,21 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Comprovante.cs" />
-    <Compile Include="Deposito.cs" />
-    <Compile Include="Endereco.cs" />
-    <Compile Include="Extrato.cs" />
-    <Compile Include="PessoaFisica.cs" />
-    <Compile Include="PessoaJuridica.cs" />
+    <Compile Include="Banco\Banco.cs" />
+    <Compile Include="Banco\ContaCorrente.cs" />
+    <Compile Include="Banco\Especial.cs" />
+    <Compile Include="Banco\Normal.cs" />
+    <Compile Include="Banco\OrdemJuridica.cs" />
+    <Compile Include="Banco\ServicoAnaliseClientePotencial.cs" />
+    <Compile Include="Clientes\Cliente.cs" />
+    <Compile Include="Clientes\Endereco.cs" />
+    <Compile Include="Clientes\PessoaFisica.cs" />
+    <Compile Include="Clientes\PessoaJuridica.cs" />
+    <Compile Include="Clientes\Repositorio\RepositorioDeClientes.cs" />
+    <Compile Include="Clientes\Telefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Saque.cs" />
-    <Compile Include="Telefone.cs" />
-    <Compile Include="TransacaoBancaria.cs" />
-    <Compile Include="Transferencia.cs" />
+    <Compile Include="TransacoesBancarias\Comprovante.cs" />
+    <Compile Include="TransacoesBancarias\Deposito.cs" />
+    <Compile Include="TransacoesBancarias\Extrato.cs" />
+    <Compile Include="TransacoesBancarias\Repositorio\RepositorioDeTransacoesBancarias.cs" />
+    <Compile Include="TransacoesBancarias\Saque.cs" />
+    <Compile Include="TransacoesBancarias\TransacaoBancaria.cs" />
+    <Compile Include="TransacoesBancarias\Transferencia.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DiagramadeClasse.cd" />
+    <None Include="ModeloXPTO.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
