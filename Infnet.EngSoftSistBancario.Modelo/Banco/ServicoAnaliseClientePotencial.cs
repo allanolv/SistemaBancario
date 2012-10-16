@@ -9,6 +9,6 @@ namespace inf.EngSoftSistBancario.Modelo.Banco
     {
         public string Perfil { get; set; }
         public string Beneficios { get; set; }
-        public decimal Dinheiro { get; set; }
+        public decimal valorFinanceiro { get; set; }
     }
 }

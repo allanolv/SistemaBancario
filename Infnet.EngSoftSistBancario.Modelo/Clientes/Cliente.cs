@@ -7,7 +7,11 @@ namespace inf.EngSoftSistBancario.Modelo.Clientes
 {
    public abstract class Cliente
     {
-        public string Nome { get; set; }
+       private string nome;
+        public string Nome { 
+            get{return nome;}
+            set{nome = value;}
+        }
         public List<Endereco> Enderecos { get; set; }
         public List<Telefone> Telefones { get; set; }
 

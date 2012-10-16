@@ -3,7 +3,7 @@
   <Class Name="inf.EngSoftSistBancario.Modelo.Banco.Banco" Collapsed="true">
     <Position X="9.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAACCAAAAAAAAAAEQAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAACCAAAAgAAAAAEQAAAAAAAAAAA=</HashCode>
       <FileName>Banco\Banco.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,10 +13,10 @@
       <Property Name="ContaCorrente" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.ContaCorrente" Collapsed="true">
+  <Class Name="inf.EngSoftSistBancario.Modelo.Banco.ContaCorrente">
     <Position X="12.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAAAAg=</HashCode>
       <FileName>Banco\ContaCorrente.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -26,28 +26,28 @@
   <Class Name="inf.EngSoftSistBancario.Modelo.Banco.Especial" Collapsed="true">
     <Position X="16.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAgIAAAEAAAAAABgAAAA=</HashCode>
       <FileName>Banco\Especial.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="inf.EngSoftSistBancario.Modelo.Banco.Normal" Collapsed="true">
     <Position X="12.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAIAAAEAAAAAABAAAAA=</HashCode>
       <FileName>Banco\Normal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="inf.EngSoftSistBancario.Modelo.Banco.OrdemJuridica" Collapsed="true">
     <Position X="12.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Banco\OrdemJuridica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="inf.EngSoftSistBancario.Modelo.Banco.ServicoAnaliseClientePotencial" Collapsed="true">
     <Position X="12.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Banco\ServicoAnaliseClientePotencial.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +66,7 @@
   <Class Name="inf.EngSoftSistBancario.Modelo.Clientes.Endereco" Collapsed="true">
     <Position X="3.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAABAACIAAACAgACAAAAAAAAAAAAAgAABAAA=</HashCode>
+      <HashCode>CAAAAAAAAABAgCIAAACAgACAAAAAAAAAAAAAgAABAAA=</HashCode>
       <FileName>Clientes\Endereco.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -148,7 +148,7 @@
   <Class Name="inf.EngSoftSistBancario.Modelo.TransacoesBancarias.Transferencia" Collapsed="true">
     <Position X="6.5" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAQAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TransacoesBancarias\Transferencia.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -7,12 +7,12 @@ namespace inf.EngSoftSistBancario.Modelo.Banco
 {
      public abstract class Banco
     {
-
+        public string cliente { get; set; }
          public inf.EngSoftSistBancario.Modelo.Clientes.Cliente Cliente
          {
              get
              {
-                 throw new System.NotImplementedException();
+                throw new System.NotImplementedException();
              }
              set
              {
