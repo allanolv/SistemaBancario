@@ -41,7 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransacoesBancarias\RepositorioTransacaoBancaria.cs" />
+    <Compile Include="RepositorioDeClientes.cs" />
+    <Compile Include="RepositorioTransacoesBancarias.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infnet.EngSoftSistBancario.Modelo\Infnet.EngSoftSistBancario.Modelo.csproj">

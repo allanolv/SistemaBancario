@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Infnet.EngSoftSistBancario.Test")]
+[assembly: AssemblyTitle("Infnet.EngSoftSistBancario.Servico")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EDF")]
-[assembly: AssemblyProduct("Infnet.EngSoftSistBancario.Test")]
-[assembly: AssemblyCopyright("Copyright © EDF 2012")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("Infnet.EngSoftSistBancario.Servico")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("77da222f-3f81-4136-a44f-2ca743208aa6")]
+[assembly: Guid("5572d18e-f0b7-447c-96de-ea47973f8b51")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -31,5 +31,6 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

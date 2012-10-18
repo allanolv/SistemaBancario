@@ -40,26 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banco\Banco.cs" />
-    <Compile Include="Banco\ContaCorrente.cs" />
-    <Compile Include="Banco\Especial.cs" />
-    <Compile Include="Banco\Normal.cs" />
-    <Compile Include="Banco\OrdemJuridica.cs" />
-    <Compile Include="Banco\ServicoAnaliseClientePotencial.cs" />
-    <Compile Include="Clientes\Cliente.cs" />
-    <Compile Include="Clientes\Endereco.cs" />
-    <Compile Include="Clientes\PessoaFisica.cs" />
-    <Compile Include="Clientes\PessoaJuridica.cs" />
-    <Compile Include="Clientes\Repositorio\RepositorioDeClientes.cs" />
-    <Compile Include="Clientes\Telefone.cs" />
+    <Compile Include="Banco.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Comprovante.cs" />
+    <Compile Include="ContaCorrente.cs" />
+    <Compile Include="Deposito.cs" />
+    <Compile Include="Endereco.cs" />
+    <Compile Include="Especial.cs" />
+    <Compile Include="Extrato.cs" />
+    <Compile Include="Normal.cs" />
+    <Compile Include="OrdemJuridica.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PessoaJuridica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransacoesBancarias\Comprovante.cs" />
-    <Compile Include="TransacoesBancarias\Deposito.cs" />
-    <Compile Include="TransacoesBancarias\Extrato.cs" />
-    <Compile Include="TransacoesBancarias\Repositorio\RepositorioDeTransacoesBancarias.cs" />
-    <Compile Include="TransacoesBancarias\Saque.cs" />
-    <Compile Include="TransacoesBancarias\TransacaoBancaria.cs" />
-    <Compile Include="TransacoesBancarias\Transferencia.cs" />
+    <Compile Include="Saque.cs" />
+    <Compile Include="Telefone.cs" />
+    <Compile Include="TransacaoBancaria.cs" />
+    <Compile Include="Transferencia.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ModeloXPTO.cd" />
