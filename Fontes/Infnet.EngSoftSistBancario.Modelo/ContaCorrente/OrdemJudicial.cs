@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace inf.EngSoftSistBancario.Modelo.Banco
+namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public class OrdemJuridica
+    public class OrdemJudicial
     {
         public bool ordens { get; set; }
         public string informacoes { get; set; }

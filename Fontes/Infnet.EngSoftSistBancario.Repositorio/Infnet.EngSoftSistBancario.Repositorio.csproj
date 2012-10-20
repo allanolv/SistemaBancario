@@ -8,7 +8,7 @@
     <ProjectGuid>{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>inf.EngSoftSistBancario.Repositorio</RootNamespace>
+    <RootNamespace>Infnet.EngSoftSistBancario.Repositorio</RootNamespace>
     <AssemblyName>Infnet.EngSoftSistBancario.Repositorio</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioContaCorrente.cs" />
     <Compile Include="RepositorioDeClientes.cs" />
     <Compile Include="RepositorioTransacoesBancarias.cs" />
   </ItemGroup>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public  class  Endereco
+    public class Endereco
     {
         public string  TipoDeLogradouro { get; set; }
         public string Logradouro { get; set; }
@@ -15,6 +15,5 @@ namespace Infnet.EngSoftSistBancario.Modelo
         public string Cidade { get; set; }
         public string UF { get; set; }
         public int CEP { get; set; }
-      
     }
 }

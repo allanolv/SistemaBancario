@@ -5,12 +5,8 @@ using System.Text;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public class Transferencia : TransacaoBancaria
+    public class Deposito : TransacaoBancaria
     {
-        // Acrescentar uma propriedade acrescentado a conta corrente destino;
-
-        public Decimal Valor { get; set; }
-
         public override bool Execute()
         {
             throw new NotImplementedException();

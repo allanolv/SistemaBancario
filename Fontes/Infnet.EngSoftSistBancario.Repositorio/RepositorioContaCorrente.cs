@@ -6,15 +6,14 @@ using Infnet.EngSoftSistBancario.Modelo;
 
 namespace Infnet.EngSoftSistBancario.Repositorio
 {
-    public class RepositorioDeClientes
+    public class RepositorioContaCorrente
     {
-
-        public Boolean Inserir(Cliente pCliente)
+        public Boolean Inserir(ContaCorrente pContaCorrente)
         {
             return true;
         }
 
-        public Boolean Alterar(Cliente pCliente)
+        public Boolean Alterar(ContaCorrente pContaCorrente)
         {
             return true;
         }
