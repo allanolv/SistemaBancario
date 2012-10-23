@@ -6,11 +6,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EC4414F3-F40D-4EF1-B130-B2B48F18B520}</ProjectGuid>
+    <ProjectGuid>{A872AD3B-97A9-4AEF-B578-F411F5569C85}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Infnet.EngSoftSistBancario.Testes</RootNamespace>
-    <AssemblyName>Infnet.EngSoftSistBancario.Testes</AssemblyName>
+    <RootNamespace>Infnet.EngSoftSistBancario.MsTestes</RootNamespace>
+    <AssemblyName>Infnet.EngSoftSistBancario.MsTestes</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,7 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="nunit.framework, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -47,7 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestarClientes.cs" />
+    <Compile Include="RepositorioTransacaoBancariaTest.cs" />
+    <Compile Include="SaqueTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infnet.EngSoftSistBancario.Modelo\Infnet.EngSoftSistBancario.Modelo.csproj">
