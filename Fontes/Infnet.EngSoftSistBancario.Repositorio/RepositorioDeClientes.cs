@@ -8,6 +8,20 @@ namespace Infnet.EngSoftSistBancario.Repositorio
 {
     public class RepositorioDeClientes
     {
+        private static RepositorioDeClientes instanciaDoRepositorio = null;
+
+        private RepositorioDeClientes()
+        {
+
+        }
+
+        public static RepositorioDeClientes Instancia()
+        {
+            if (instanciaDoRepositorio == null)
+                instanciaDoRepositorio = new RepositorioDeClientes();
+            return instanciaDoRepositorio;
+        }
+
 
         public Boolean Inserir(Cliente pCliente)
         {

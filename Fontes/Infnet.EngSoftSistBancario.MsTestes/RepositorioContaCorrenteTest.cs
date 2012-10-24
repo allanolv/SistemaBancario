@@ -2,27 +2,22 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Infnet.EngSoftSistBancario.Modelo;
-
+using Infnet.EngSoftSistBancario.Repositorio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Infnet.EngSoftSistBancario.Testes
 {
     /// <summary>
-    /// Summary description for SaqueTest
+    /// Summary description for RepositorioContaCorrenteTest
     /// </summary>
     [TestClass]
-    public class SaqueTest
+    public class RepositorioContaCorrenteTest
     {
-
-        private Saque saque;
-
-        public SaqueTest()
+        public RepositorioContaCorrenteTest()
         {
             //
             // TODO: Add constructor logic here
             //
-            saque = new Saque();
         }
 
         private TestContext testContextInstance;
@@ -66,21 +61,12 @@ namespace Infnet.EngSoftSistBancario.Testes
         #endregion
 
         [TestMethod]
-        public void TestarDataEfetivacao()
+        public void TestarInstanciaUnica()
         {
-            DateTime data_efetivacao = DateTime.Parse("10/10/2012");
-            saque.DataEfetivacao = data_efetivacao;
+            RepositorioContaCorrente repositorio1 = RepositorioContaCorrente.Instancia();
+            RepositorioContaCorrente repositorio2 = RepositorioContaCorrente.Instancia();
 
-            Assert.AreEqual(data_efetivacao, saque.DataEfetivacao);
-        }
-
-        [TestMethod]
-        public void TestarValor()
-        {
-            Decimal valor = Decimal.Parse("1200.12");
-            saque.Valor = valor;
-
-            Assert.AreEqual(valor, saque.Valor);
+            Assert.AreSame(repositorio1, repositorio2);
         }
     }
 }
