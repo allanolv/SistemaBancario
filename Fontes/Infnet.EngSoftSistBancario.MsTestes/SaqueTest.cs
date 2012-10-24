@@ -6,7 +6,7 @@ using Infnet.EngSoftSistBancario.Modelo;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Infnet.EngSoftSistBancario.Testes
+namespace Infnet.EngSoftSistBancario.MsTestes
 {
     /// <summary>
     /// Summary description for SaqueTest

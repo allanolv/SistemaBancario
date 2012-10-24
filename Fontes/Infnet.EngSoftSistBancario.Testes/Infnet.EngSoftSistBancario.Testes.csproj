@@ -9,7 +9,7 @@
     <ProjectGuid>{EC4414F3-F40D-4EF1-B130-B2B48F18B520}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Infnet.EngSoftSistBancario.Testes</RootNamespace>
+    <RootNamespace>Infnet.EngSoftSistBancario.MsTestes</RootNamespace>
     <AssemblyName>Infnet.EngSoftSistBancario.Testes</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

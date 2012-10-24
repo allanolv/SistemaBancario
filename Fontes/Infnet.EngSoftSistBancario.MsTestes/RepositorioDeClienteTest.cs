@@ -5,7 +5,7 @@ using System.Linq;
 using Infnet.EngSoftSistBancario.Repositorio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Infnet.EngSoftSistBancario.Testes
+namespace Infnet.EngSoftSistBancario.MsTestes
 {
     /// <summary>
     /// Summary description for RepositorioDeClienteTest
