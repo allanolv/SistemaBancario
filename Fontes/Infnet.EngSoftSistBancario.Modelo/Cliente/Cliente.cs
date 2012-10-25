@@ -15,7 +15,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
 
         public Cliente()
         {
-            // TODO: Complete member initialization
+            
         }
 
     }

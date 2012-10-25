@@ -9,6 +9,6 @@ namespace Infnet.EngSoftSistBancario.Modelo
     {
         public Cliente cliente;
         public decimal Renda { get; set; }
-        public int CPF { get; set; } 
+        public string CPF { get; set; } 
     }
 }
