@@ -68,24 +68,15 @@ namespace Infnet.EngSoftSistBancario.MsTestes
         //}
         //
         #endregion
-        internal virtual ContaCorrente CreateContaCorrente()
-        {
-
-        }
-
-
-        /// <summary>
-        ///A test for ContaCorrente Constructor
-        ///</summary>
-        [TestMethod()]
-        public void ContaCorrenteConstructorTest()
+        internal virtual ContaCorrente Createcontacorrente()
         {
             ContaCorrente target = new ContaCorrente();
-            Assert.Inconclusive("TODO: Implement code to verify target");
+            return target;
+
         }
 
         /// <summary>
-        ///A test for contaEspecial
+        ///Este conta especial
         ///</summary>
         [TestMethod()]
         public void contaEspecialTest()
