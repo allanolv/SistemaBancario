@@ -5,9 +5,38 @@ using System.Text;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public class ContaCorrente
+    public abstract class ContaCorrente
     {
-        public List<Normal> contaNormal { get; set; }
-        public List<Especial> contaEspecial { get; set; }
+        abstract public string DescricaoDaConta();
+
+        //Cliente Nome
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //int NumeroDaconta
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //bool StatusDaConta
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //decimal Tarifa
+        //{
+        //    get;
+        //    set;
+
+        //}
+
+
+        //public List<Normal> contaNormal { get; set; }
+        //public List<Especial> contaEspecial { get; set; }
+
     }
 }

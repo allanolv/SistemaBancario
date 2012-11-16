@@ -41,8 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente\Cliente.cs" />
-    <Compile Include="TransacaoBancaria\Comprovante.cs" />
     <Compile Include="ContaCorrente\ContaCorrente.cs" />
+    <Compile Include="TransacaoBancaria\Comprovante.cs" />
     <Compile Include="TransacaoBancaria\Deposito.cs" />
     <Compile Include="Cliente\Endereco.cs" />
     <Compile Include="ContaCorrente\Especial.cs" />
