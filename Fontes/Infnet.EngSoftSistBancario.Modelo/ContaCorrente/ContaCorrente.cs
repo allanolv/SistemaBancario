@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Infnet.EngSoftSistBancario.Modelo
+namespace Infnet.EngSoftSistBancario.Modelo.ContaCorrente
 {
     public abstract class ContaCorrente
     {

@@ -10,7 +10,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
         // Acrescentar uma propriedade acrescentado a conta corrente destino;
 
 
-        public ContaCorrente ContaCorrenteDestino { get; set; }
+        public ContaCorrente.ContaCorrente ContaCorrenteDestino { get; set; }
         public override bool Execute()
         {
             throw new NotImplementedException();
