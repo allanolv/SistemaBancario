@@ -43,13 +43,17 @@ namespace Infnet.EngSoftSistBancario.Modelo
             _status = StatusCliente.Inativo;
         }
 
-        public void AdionarTelefone(String pDDD, String pNumero, TipoTelefone pTipo)
+        public void AdicionarTelefone(String pDDD, String pNumero, TipoTelefone pTipo)
         {
             Telefone telefone = new Telefone(pDDD,pNumero,pTipo);
             _Telefones.Add(telefone);
         }
 
-        // Adicionar endereços, conforme foi feito em adicionar telefones;
-
+        public void AdicionarEndereco(TipoLogradouro pTipoLogradouro, String pLogradouro, String pNumero, String pComplemento, String pBairro, String pCidade, String pUF, String pCEP)
+        {
+            Endereco endereco = new Endereco(pTipoLogradouro, pLogradouro, pNumero, pComplemento, pBairro, pCidade, pUF, pCEP);
+            _Enderecos.Add(endereco); 
+        }
+      
     }
 }

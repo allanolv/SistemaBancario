@@ -15,5 +15,18 @@ namespace Infnet.EngSoftSistBancario.Modelo
         public String Cidade { get; set; }
         public String UF { get; set; }
         public String CEP { get; set; }
+
+        public Endereco(TipoLogradouro pTipoLogradouro, String pLogradouro, String pNumero, String pComplemento, String pBairro, String pCidade, String pUF, String pCEP) {
+
+            TipoDeLogradouro = pTipoLogradouro;
+            Logradouro = pLogradouro;
+            Numero = pNumero;
+            Complemento = pComplemento;
+            Bairro = pBairro;
+            Cidade = pCidade;
+            UF = pUF;
+            CEP = pCEP;
+        
+        }
     }
 }
