@@ -36,6 +36,8 @@ namespace Infnet.EngSoftSistBancario.MsTestes
             pessoaFisica.Nome = "CARLOS HENRIQUE MEIRELES CORBO";
             pessoaFisica.Renda = 1000;
             //pessoaFisica.AdionarTelefone(new Telefone("021","8890-0092",
+            repositorioCliente.Inserir(pessoaFisica);
+            PessoaFisica atual = (repositorioCliente.ObterCPF("12") as PessoaFisica);
 
             /* Adicionar um cliente e tentar recuperar depois verificando através da classe estática Assert se o cliente recuperado 
              * é mesmo que foi inserido */

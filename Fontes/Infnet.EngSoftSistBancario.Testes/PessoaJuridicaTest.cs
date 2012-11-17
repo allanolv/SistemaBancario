@@ -44,5 +44,17 @@ namespace Infnet.EngSoftSistBancario.MsTestes
             actual = pessoaJuridica.Receita;
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void IncluirTelefonesTest()
+        {
+            /* Criar um objeto PessoaJuridica
+             * Adicionar atributos os atributos do objeto;
+             * Adicionar um telefone usando o método específico;
+             * Recuperar através do atributo da lista;
+             * Usar o comando assert para verificar os atributos estão com o mesmo valor;
+             * AreEqual(esperado, atual);s
+             */
+        }
     }
 }

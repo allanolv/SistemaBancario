@@ -46,14 +46,14 @@ namespace Infnet.EngSoftSistBancario.Repositorio
             return _result;
         }
 
-        public Cliente ObterCPF(String pCPF)
+        public PessoaFisica ObterCPF(String pCPF) 
         {
-            return _lstCliente.Where(c => c is PessoaFisica && ((PessoaFisica)c).CPF == pCPF).FirstOrDefault();
+            return (_lstCliente.Where(c => c is PessoaFisica && ((PessoaFisica)c).CPF == pCPF).FirstOrDefault() as PessoaFisica);
         }
 
-        public Cliente ObterCNPJ(String pCNPJ)
+        public PessoaJuridica ObterCNPJ(String pCNPJ)
         {
-            return _lstCliente.Where(c => c is PessoaJuridica && ((PessoaJuridica)c).CNPJ == pCNPJ).FirstOrDefault();
+            return (_lstCliente.Where(c => c is PessoaJuridica && ((PessoaJuridica)c).CNPJ == pCNPJ).FirstOrDefault() as PessoaJuridica);
         }
 
         public void DesativarCliente(Cliente pCliente)
