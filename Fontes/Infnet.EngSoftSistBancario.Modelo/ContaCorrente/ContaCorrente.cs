@@ -2,41 +2,70 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Infnet.EngSoftSistBancario.Modelo.Excecoes;
 
-namespace Infnet.EngSoftSistBancario.Modelo.ContaCorrente
+namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public abstract class ContaCorrente
+    public class ContaCorrente
     {
-        abstract public string DescricaoDaConta();
+        // Atributos privados;
+        private Cliente _titular;
+        private StatusContaCorrente _status;
+        private Decimal _saldo;
 
-        //Cliente Nome
-        //{
-        //    get;
-        //    set;
-        //}
+        // Atributos publicos;
+        public Cliente Titular
+        {
+            get { return _titular; }
+            set { _titular = value; }
+        }
+        public String Numero { get; set; }
 
-        //int NumeroDaconta
-        //{
-        //    get;
-        //    set;
-        //}
+        public StatusContaCorrente Status
+        {
+            get { return _status; }
+        }
+        public Decimal Tarifa { get; set; }
+        
+        // Métodos
+        public ContaCorrente()
+        {
 
-        //bool StatusDaConta
-        //{
-        //    get;
-        //    set;
-        //}
+        }
 
-        //decimal Tarifa
-        //{
-        //    get;
-        //    set;
+        public ContaCorrente(Cliente pCliente, String pNumeroConta, Decimal pTarifaMensal)
+        {
+            this.Titular = pCliente;
+            this.Numero = pNumeroConta;
+            this.Tarifa = pTarifaMensal;
+            _status = StatusContaCorrente.Ativa;
+        }
+        public void Encerrar()
+        {
+            _status = StatusContaCorrente.Encerrada;
+        }
+        public void Bloquear()
+        {
+            _status = StatusContaCorrente.Bloqueada;
+        }
 
-        //}
+        public void Desbloquear()
+        {
+            _status = StatusContaCorrente.Ativa;
+        }
 
+        public virtual void Creditar(Decimal pValor)
+        {
+            _saldo += pValor;
+        }
 
-        //public List<Normal> contaNormal { get; set; }
-        //public List<Especial> contaEspecial { get; set; }
+        public virtual void Debitar(Decimal pValor)
+        {
+            if ((_saldo - pValor) < 0)
+                throw new ExSaldoInsuficiente();
+        }
 
+             
+        
     }
 }

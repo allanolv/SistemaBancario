@@ -7,14 +7,13 @@ namespace Infnet.EngSoftSistBancario.Modelo
 {
     public class Endereco
     {
-        public int idCliente { get; set; }
-        public string  TipoDeLogradouro { get; set; }
-        public string Logradouro { get; set; }
-        public int Numero { get; set; }
-        public string  Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string Cidade { get; set; }
-        public string UF { get; set; }
-        public string CEP { get; set; }
+        public TipoLogradouro TipoDeLogradouro { get; set; }
+        public String Logradouro { get; set; }
+        public String Numero { get; set; }
+        public String Complemento { get; set; }
+        public String Bairro { get; set; }
+        public String Cidade { get; set; }
+        public String UF { get; set; }
+        public String CEP { get; set; }
     }
 }

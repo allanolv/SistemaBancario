@@ -8,9 +8,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
     public class Transferencia : TransacaoBancaria
     {
         // Acrescentar uma propriedade acrescentado a conta corrente destino;
-
-
-        public ContaCorrente.ContaCorrente ContaCorrenteDestino { get; set; }
+        public ContaCorrente ContaCorrenteDestino { get; set; }
         public override bool Execute()
         {
             throw new NotImplementedException();

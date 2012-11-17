@@ -5,9 +5,11 @@ using System.Text;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public class PessoaFisica : Cliente 
+    public enum TipoTelefone
     {
-        public string CPF { get; set; }
-        public decimal Renda { get; set; }
+        Residencial,
+        Celular,
+        Comercial,
+        Fax
     }
 }

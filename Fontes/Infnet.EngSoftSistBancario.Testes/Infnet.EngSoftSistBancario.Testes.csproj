@@ -34,7 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="nunit.framework, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.2\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -46,7 +49,15 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteTest.cs" />
+    <Compile Include="ContaCorrenteTest.cs" />
+    <Compile Include="PessoaJuridicaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioClienteTest.cs" />
+    <Compile Include="RepositorioContaCorrenteTest.cs" />
+    <Compile Include="RepositorioTransacaoBancariaTest.cs" />
+    <Compile Include="SaqueTest.cs" />
+    <Compile Include="TransferenciaTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infnet.EngSoftSistBancario.Modelo\Infnet.EngSoftSistBancario.Modelo.csproj">
@@ -56,6 +67,10 @@
     <ProjectReference Include="..\Infnet.EngSoftSistBancario.Repositorio\Infnet.EngSoftSistBancario.Repositorio.csproj">
       <Project>{6B3F36DA-7DAD-48A3-9E96-3241AA9BFF80}</Project>
       <Name>Infnet.EngSoftSistBancario.Repositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infnet.EngSoftSistBancario.Servico\Infnet.EngSoftSistBancario.Servico.csproj">
+      <Project>{7824FCDE-DF6C-4A7A-8D4C-734B623A78B7}</Project>
+      <Name>Infnet.EngSoftSistBancario.Servico</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

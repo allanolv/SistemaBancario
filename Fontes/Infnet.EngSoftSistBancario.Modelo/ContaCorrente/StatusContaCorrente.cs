@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public class PessoaFisica : Cliente 
+    public enum StatusContaCorrente
     {
-        public string CPF { get; set; }
-        public decimal Renda { get; set; }
+        Ativa,
+        Bloqueada,
+        Encerrada
     }
 }

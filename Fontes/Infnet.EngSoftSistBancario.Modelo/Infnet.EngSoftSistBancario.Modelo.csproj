@@ -41,13 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente\Cliente.cs" />
+    <Compile Include="Cliente\StatusCliente.cs" />
+    <Compile Include="Cliente\TipoLogradouro.cs" />
+    <Compile Include="Cliente\TipoTelefone.cs" />
     <Compile Include="ContaCorrente\ContaCorrente.cs" />
+    <Compile Include="ContaCorrente\ContaCorrenteEspecial.cs" />
+    <Compile Include="ContaCorrente\ExSaldoInsuficiente.cs" />
+    <Compile Include="ContaCorrente\StatusContaCorrente.cs" />
     <Compile Include="TransacaoBancaria\Comprovante.cs" />
     <Compile Include="TransacaoBancaria\Deposito.cs" />
     <Compile Include="Cliente\Endereco.cs" />
-    <Compile Include="ContaCorrente\Especial.cs" />
     <Compile Include="TransacaoBancaria\Extrato.cs" />
-    <Compile Include="ContaCorrente\Normal.cs" />
     <Compile Include="ContaCorrente\OrdemJudicial.cs" />
     <Compile Include="Cliente\PessoaFisica.cs" />
     <Compile Include="Cliente\PessoaJuridica.cs" />

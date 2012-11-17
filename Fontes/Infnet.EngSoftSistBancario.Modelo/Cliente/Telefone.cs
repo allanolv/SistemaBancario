@@ -7,9 +7,16 @@ namespace Infnet.EngSoftSistBancario.Modelo
 {
     public class Telefone
     {
-        public int idCliente { get; set; }
-        public int DDD { get; set; }
-        public string Numero { get; set; }
-        public string Tipo { get; set; }
+        public String DDD { get; set; }
+        public String Numero { get; set; }
+        public TipoTelefone Tipo { get; set; }
+
+        public Telefone(String pDDD, String pNumero, TipoTelefone pTipo)
+        {
+            DDD = pDDD;
+            Numero = pNumero;
+            Tipo = pTipo;
+        }
+
     }
 }

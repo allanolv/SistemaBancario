@@ -41,8 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioClientes.cs" />
     <Compile Include="RepositorioContaCorrente.cs" />
-    <Compile Include="RepositorioDeClientes.cs" />
     <Compile Include="RepositorioTransacoesBancarias.cs" />
   </ItemGroup>
   <ItemGroup>
