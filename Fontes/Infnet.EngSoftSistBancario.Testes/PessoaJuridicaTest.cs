@@ -1,6 +1,7 @@
-﻿using Infnet.EngSoftSistBancario.Modelo;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
+using Infnet.EngSoftSistBancario.Modelo;
+using System.Collections.Generic;
 
 namespace Infnet.EngSoftSistBancario.MsTestes
 {
@@ -24,7 +25,7 @@ namespace Infnet.EngSoftSistBancario.MsTestes
         public void CNPJTest()
         {
             pessoaJuridica = new PessoaJuridica();// TODO: Initialize to an appropriate value
-            string expected = "11111111111111"; // TODO: Initialize to an appropriate value
+            string expected = "35.380.399/0001-88"; // TODO: Initialize to an appropriate value
             string actual;
             pessoaJuridica.CNPJ = expected;
             actual = pessoaJuridica.CNPJ;
@@ -48,13 +49,18 @@ namespace Infnet.EngSoftSistBancario.MsTestes
         [Test]
         public void IncluirTelefonesTest()
         {
-            /* Criar um objeto PessoaJuridica
-             * Adicionar atributos os atributos do objeto;
-             * Adicionar um telefone usando o método específico;
-             * Recuperar através do atributo da lista;
-             * Usar o comando assert para verificar os atributos estão com o mesmo valor;
-             * AreEqual(esperado, atual);s
-             */
+            pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Glebson Lima";
+            pessoaJuridica.CNPJ = "35.380.399/0001-88";
+            pessoaJuridica.Receita = 10000;
+            pessoaJuridica.AdicionarTelefone("(021)", "3396-7487", TipoTelefone.Celular);
+
+            PessoaJuridica esperado = pessoaJuridica;
+            PessoaJuridica atual;
+            atual = esperado;
+            Assert.AreEqual(esperado, atual);
+
+
         }
     }
 }
