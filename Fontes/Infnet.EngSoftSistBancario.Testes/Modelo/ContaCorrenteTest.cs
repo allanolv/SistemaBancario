@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 
-namespace Infnet.EngSoftSistBancario.MsTestes
+namespace Infnet.EngSoftSistBancario.Testes
 {
     
     

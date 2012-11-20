@@ -31,6 +31,8 @@ namespace Infnet.EngSoftSistBancario.Modelo
         public Cliente()
         {
             _status = StatusCliente.Potencial;
+            _Enderecos = new List<Endereco>();
+            _Telefones = new List<Telefone>();
         }
 
         public void Ativar()
@@ -43,9 +45,9 @@ namespace Infnet.EngSoftSistBancario.Modelo
             _status = StatusCliente.Inativo;
         }
 
-        public void AdicionarTelefone(String pDDD, String pNumero, TipoTelefone pTipo)
+        public void AdicionarTelefone(TipoTelefone pTipo, String pDDD, String pNumero)
         {
-            Telefone telefone = new Telefone(pDDD,pNumero,pTipo);
+            Telefone telefone = new Telefone(pTipo, pDDD, pNumero);
             _Telefones.Add(telefone);
         }
 

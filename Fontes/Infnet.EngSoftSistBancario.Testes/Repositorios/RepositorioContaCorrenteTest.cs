@@ -3,32 +3,33 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Infnet.EngSoftSistBancario.Repositorio;
-using Infnet.EngSoftSistBancario.Modelo;
 using NUnit.Framework;
 
-namespace Infnet.EngSoftSistBancario.MsTestes
+namespace Infnet.EngSoftSistBancario.Testes
 {
     /// <summary>
-    /// Summary description for RepositorioTransacaoBancariaTest
+    /// Summary description for RepositorioContaCorrenteTest
     /// </summary>
     [TestFixture]
-    public class RepositorioTransacaoBancariaTest
+    public class RepositorioContaCorrenteTest
     {
-        public RepositorioTransacaoBancariaTest()
+        RepositorioClientes repositorioClientes;
+
+        public RepositorioContaCorrenteTest()
         {
             //
             // TODO: Add constructor logic here
             //
+
         }
 
         [Test]
         public void TestarInstanciaUnica()
         {
-            RepositorioTransacaoBancaria repositorio1 = RepositorioTransacaoBancaria.Instancia();
-            RepositorioTransacaoBancaria repositorio2 = RepositorioTransacaoBancaria.Instancia();
+            RepositorioContaCorrente repositorio1 = RepositorioContaCorrente.Instancia();
+            RepositorioContaCorrente repositorio2 = RepositorioContaCorrente.Instancia();
 
             Assert.AreSame(repositorio1, repositorio2);
         }
-
     }
 }

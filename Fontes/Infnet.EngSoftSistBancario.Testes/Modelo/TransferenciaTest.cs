@@ -6,7 +6,7 @@ using Infnet.EngSoftSistBancario.Modelo;
 
 
 
-namespace Infnet.EngSoftSistBancario.MsTestes
+namespace Infnet.EngSoftSistBancario.Testes
 {
     class TransferenciaTest
     {

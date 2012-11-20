@@ -5,7 +5,7 @@ using System.Linq;
 using Infnet.EngSoftSistBancario.Modelo;
 using NUnit.Framework;
 
-namespace Infnet.EngSoftSistBancario.MsTestes
+namespace Infnet.EngSoftSistBancario.Testes
 {
     /// <summary>
     /// Summary description for SaqueTest

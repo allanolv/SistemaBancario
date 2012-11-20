@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-20" time="15:51:06">
+  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5466" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.2\bin" machine-name="PERSONALLAPWIN7" user="henrique" user-domain="PersonalLapWin7" />
+  <culture-info current-culture="pt-BR" current-uiculture="pt-BR" />
+  <test-suite type="Project" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit" executed="True" result="Success" success="True" time="0.007" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\bin\Debug\Infnet.EngSoftSistBancario.Testes.dll" executed="True" result="Success" success="True" time="0.007" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Infnet" executed="True" result="Success" success="True" time="0.006" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="EngSoftSistBancario" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Testes" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="PessoaJuridicaTest" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.IncluirTelefonesTest" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

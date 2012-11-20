@@ -7,16 +7,15 @@ namespace Infnet.EngSoftSistBancario.Modelo
 {
     public class Telefone
     {
+        public TipoTelefone Tipo { get; set; }
         public String DDD { get; set; }
         public String Numero { get; set; }
-        public TipoTelefone Tipo { get; set; }
 
-        public Telefone(String pDDD, String pNumero, TipoTelefone pTipo)
+        public Telefone(TipoTelefone pTipo, String pDDD, String pNumero)
         {
+            Tipo = pTipo;
             DDD = pDDD;
             Numero = pNumero;
-            Tipo = pTipo;
         }
-
     }
 }

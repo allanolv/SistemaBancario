@@ -6,7 +6,7 @@ using Infnet.EngSoftSistBancario.Modelo;
 
 namespace Infnet.EngSoftSistBancario.Repositorio
 {
-    public class RepositorioClientes
+    public class RepositorioClientes 
     {
         private static RepositorioClientes instanciaDoRepositorio = null;
         private List<Cliente> _lstCliente;
@@ -24,7 +24,7 @@ namespace Infnet.EngSoftSistBancario.Repositorio
         }
 
 
-        public Boolean Inserir(Cliente pCliente)
+        public Boolean Inserir<C>(C pCliente) where C : Cliente
         {
             Boolean _result = false;
             try
@@ -39,49 +39,56 @@ namespace Infnet.EngSoftSistBancario.Repositorio
             return _result;
         }
 
-        public Boolean Alterar(Cliente pCliente)
+        public Boolean Alterar<C>(C pCliente) 
         {
             // Pensar depois.
+            // if (pCliente is PessoaFisica)
+
             Boolean _result = false;
             return _result;
         }
 
         public PessoaFisica ObterCPF(String pCPF) 
         {
-            return (_lstCliente.Where(c => c is PessoaFisica && ((PessoaFisica)c).CPF == pCPF).FirstOrDefault() as PessoaFisica);
+            return _lstCliente.Where(c => c.GetType().Name==typeof(PessoaFisica).Name && 
+                ((PessoaFisica)c).CPF == pCPF).Cast<PessoaFisica>().FirstOrDefault();
         }
 
         public PessoaJuridica ObterCNPJ(String pCNPJ)
         {
-            return (_lstCliente.Where(c => c is PessoaJuridica && ((PessoaJuridica)c).CNPJ == pCNPJ).FirstOrDefault() as PessoaJuridica);
+            return _lstCliente.Where(c => c.GetType().Name==typeof(PessoaJuridica).Name && 
+                ((PessoaJuridica)c).CNPJ == pCNPJ).Cast<PessoaJuridica>().FirstOrDefault();
         }
 
-        public void DesativarCliente(Cliente pCliente)
+        public void DesativarCliente<C>(C pCliente) where C : Cliente
         {
-            // Implementar Importante
+            Int32 vIndex = _lstCliente.IndexOf(pCliente);
+
+            if (vIndex > 0)
+                _lstCliente[vIndex].Desativar();
+            else
+                throw new ExClienteNaoEncontrado("Cliente não encontrado");
         }
 
         public void AtivarCliente(Cliente pCliente)
         {
-            // Implementar Importante
+            Int32 vIndex = _lstCliente.IndexOf(pCliente);
+
+            if (vIndex > 0)
+                _lstCliente[vIndex].Ativar();
+            else
+                throw new ExClienteNaoEncontrado("Cliente não encontrado");
         }
 
-        public List<PessoaFisica> ListarClientesPessoaFisicaAtiva()
+        public List<C> ListarClientesAtivos<C>() where C : Cliente
         {
-            // Implementar por último
-            return null;
+            return _lstCliente.Where(c => c.GetType().Name == typeof(C).Name && 
+                c.Status==StatusCliente.Ativo).Cast<C>().ToList();
         }
 
-        public List<PessoaFisica> ListarClientesPessoaJuridicaAtiva()
+        public List<C> ListarClientesPotencial<C>() where C : Cliente
         {
-            // Implementar por último
-            return null;
-        }
-
-        public List<PessoaFisica> ListarClientesPessoaPotencial()
-        {
-            // Implementar por último
-            return null;
+            return _lstCliente.Where(c => c.Status == StatusCliente.Potencial).Cast<C>().ToList();
         }
     }
 }
