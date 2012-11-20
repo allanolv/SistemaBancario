@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Infnet.EngSoftSistBancario.Testes
 {
@@ -13,23 +14,21 @@ namespace Infnet.EngSoftSistBancario.Testes
     [TestFixture]
     public class ClienteTest
     {
-
-        private Cliente cliente;
-
+        PessoaFisica esperado;
+   
         /// <summary>
         ///A test for Ativo
         ///</summary>
         [Test]
         public void AtivoTest()
         {
-            /* Refatorar
-             * cliente = new Cliente { Nome = "Ana", Ativo = true };
-            bool expected = true;
-            bool actual;
-            cliente.Ativo = expected;
-            actual = cliente.Ativo;
-            Assert.AreEqual(expected, actual);
-            */
+            esperado = new PessoaFisica();
+            esperado.Nome = "Glebson Lima";
+            esperado.Ativar();
+            PessoaFisica atual;
+            atual = esperado;
+            Assert.AreEqual(atual, esperado);
+ 
         }
 
         /// <summary>
@@ -38,35 +37,30 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void EnderecosTest()
         {
-            /* Refatorar
-             * 
-            cliente = new Cliente();
-            List<Endereco> listaEnd = new List<Endereco>();
-            Endereco End = new Endereco { Logradouro = "Rua A", Bairro = "B", CEP = "20000-000", Cidade = "Rio de Janeiro", 
-                                            Complemento = "apt101", Numero = 222, TipoDeLogradouro = "RUA", UF = "RJ" };
-            listaEnd.Add(End);
-            List<Endereco> expected = listaEnd;
-            List<Endereco> actual;
-            cliente.Enderecos = expected;
-            actual = cliente.Enderecos;
-            Assert.AreEqual(expected, actual);
-             */
+            esperado = new PessoaFisica();
+            esperado.Nome = "Glebson Lima";
+            esperado.CPF = "871.852.323/02";
+            esperado.Renda = 2000;
+            esperado.AdicionarEndereco(TipoLogradouro.Avenida, "Ernani Cardoso", "500", "apt 240", "Cascadura", "Rio de Janeiro", "RJ", "85411-080");
+            Endereco atual = esperado.Enderecos.Where(e => e.CEP == "85411-080").FirstOrDefault();
+            Assert.Contains(atual, esperado.Enderecos);
         }
 
         /// <summary>
         ///A test for Nome
         ///</summary>
         [Test]
-        public void NomeTest()
+        public void InfoBasicoTest()
         {
-            /* Refatorar
-            Cliente target = new Cliente();
-            string expected = "ANA";
-            string actual;
-            target.Nome = expected;
-            actual = target.Nome;
-            Assert.AreEqual(expected, actual);
-             */
+           List<PessoaFisica> lista = new List<PessoaFisica>();
+           PessoaFisica Tel = new PessoaFisica { Nome = "Glebson Lima", CPF = "871.852.323/02", Renda = 2000};
+           lista.Add(Tel);
+           List<PessoaFisica> esperado = lista;
+           List<PessoaFisica> atual;
+           atual = esperado.ToList();
+           Assert.AreEqual(esperado, atual);
+            
+           
         }
 
         /// <summary>
@@ -75,18 +69,13 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void TelefonesTest()
         {
-            /* Refatorar
-             * 
-            cliente = new Cliente();
-            List<Telefone> lista = new List<Telefone>();
-            Telefone Tel = new Telefone { Numero = "2222-2222", DDD = 21, Tipo = "Celular" };
-            lista.Add(Tel);
-            List<Telefone> expected = lista;
-            List<Telefone> actual;
-            cliente.Telefones = expected;
-            actual = cliente.Telefones;
-            Assert.AreEqual(expected, actual);
-             */
+            esperado = new PessoaFisica();
+            esperado.Nome = "Glebson Lima";
+            esperado.CPF = "871.852.323/02" ;
+            esperado.Renda = 2000;
+            esperado.AdicionarTelefone(TipoTelefone.Celular, "021", "8587-7425");
+            Telefone atual = esperado.Telefones.Where(t => t.Numero == "8587-7425").FirstOrDefault();
+            Assert.Contains(atual, esperado.Telefones);
         }
     }
 }
