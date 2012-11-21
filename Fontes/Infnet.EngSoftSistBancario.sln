@@ -14,8 +14,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infnet.EngSoftSistBancario.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infnet.EngSoftSistBancario.Servico", "Infnet.EngSoftSistBancario.Servico\Infnet.EngSoftSistBancario.Servico.csproj", "{7824FCDE-DF6C-4A7A-8D4C-734B623A78B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infnet.EngSoftSistBancario.MsTestes", "Infnet.EngSoftSistBancario.MsTestes\Infnet.EngSoftSistBancario.MsTestes.csproj", "{A872AD3B-97A9-4AEF-B578-F411F5569C85}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infnet.EngSoftSistBancario.Testes", "Infnet.EngSoftSistBancario.Testes\Infnet.EngSoftSistBancario.Testes.csproj", "{EC4414F3-F40D-4EF1-B130-B2B48F18B520}"
 EndProject
 Global
@@ -39,10 +37,6 @@ Global
 		{7824FCDE-DF6C-4A7A-8D4C-734B623A78B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7824FCDE-DF6C-4A7A-8D4C-734B623A78B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7824FCDE-DF6C-4A7A-8D4C-734B623A78B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A872AD3B-97A9-4AEF-B578-F411F5569C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A872AD3B-97A9-4AEF-B578-F411F5569C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A872AD3B-97A9-4AEF-B578-F411F5569C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A872AD3B-97A9-4AEF-B578-F411F5569C85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC4414F3-F40D-4EF1-B130-B2B48F18B520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EC4414F3-F40D-4EF1-B130-B2B48F18B520}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC4414F3-F40D-4EF1-B130-B2B48F18B520}.Release|Any CPU.ActiveCfg = Release|Any CPU

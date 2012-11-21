@@ -54,7 +54,7 @@
     <Compile Include="PessoaJuridicaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioContaCorrenteTest.cs" />
-    <Compile Include="RepositorioDeClienteTest.cs" />
+    <Compile Include="RepositorioClienteTest.cs" />
     <Compile Include="RepositorioTransacaoBancariaTest.cs" />
     <Compile Include="SaqueTest.cs" />
   </ItemGroup>
