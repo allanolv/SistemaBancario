@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Infnet.EngSoftSistBancario.Modelo.Excecoes
 {
-    public class ExSaldoInsuficiente : ApplicationException 
+    public class ExSaldoInsuficiente : Exception 
     {
-     
+        public ExSaldoInsuficiente(String Message) { }
     }
-    
-
 }

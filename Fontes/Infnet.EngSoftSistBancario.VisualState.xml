@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1000]C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit</TopNode>
-  <SelectedNode>[0-1006]Infnet.EngSoftSistBancario.MsTestes.ContaCorrenteTest</SelectedNode>
+  <SelectedNode>[0-1019]Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit" Expanded="true" />
-    <Node UniqueName="[0-1021]C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\bin\Debug\Infnet.EngSoftSistBancario.Testes.dll" Expanded="true" />
-    <Node UniqueName="[0-1022]Infnet" Expanded="true" />
-    <Node UniqueName="[0-1023]Infnet.EngSoftSistBancario" Expanded="true" />
-    <Node UniqueName="[0-1024]Infnet.EngSoftSistBancario.MsTestes" Expanded="true" />
-    <Node UniqueName="[0-1006]Infnet.EngSoftSistBancario.MsTestes.ContaCorrenteTest" Expanded="true" />
+    <Node UniqueName="[0-1027]C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\bin\Debug\Infnet.EngSoftSistBancario.Testes.dll" Expanded="true" />
+    <Node UniqueName="[0-1028]Infnet" Expanded="true" />
+    <Node UniqueName="[0-1029]Infnet.EngSoftSistBancario" Expanded="true" />
+    <Node UniqueName="[0-1030]Infnet.EngSoftSistBancario.Testes" Expanded="true" />
+    <Node UniqueName="[0-1004]Infnet.EngSoftSistBancario.Testes.ClienteTest" Expanded="true" />
+    <Node UniqueName="[0-1011]Infnet.EngSoftSistBancario.Testes.ContaCorrenteTest" Expanded="true" />
+    <Node UniqueName="[0-1014]Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest" Expanded="true" />
+    <Node UniqueName="[0-1019]Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest" Expanded="true" />
+    <Node UniqueName="[0-1009]Infnet.EngSoftSistBancario.Testes.RepositorioContaCorrenteTest" Expanded="true" />
+    <Node UniqueName="[0-1017]Infnet.EngSoftSistBancario.Testes.RepositorioTransacaoBancariaTest" Expanded="true" />
+    <Node UniqueName="[0-1001]Infnet.EngSoftSistBancario.Testes.SaqueTest" Expanded="true" />
   </Nodes>
 </VisualState>

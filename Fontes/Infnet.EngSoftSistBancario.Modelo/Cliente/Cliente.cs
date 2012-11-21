@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Infnet.EngSoftSistBancario.Modelo.Excecoes;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
@@ -42,13 +43,22 @@ namespace Infnet.EngSoftSistBancario.Modelo
 
         public void Desativar()
         {
+            if (_status == StatusCliente.Potencial)
+                throw new ExMudarStatusCliente("Não é possível desativar um cliente em potencial");
             _status = StatusCliente.Inativo;
         }
 
         public void AdicionarTelefone(TipoTelefone pTipo, String pDDD, String pNumero)
         {
-            Telefone telefone = new Telefone(pTipo, pDDD, pNumero);
-            _Telefones.Add(telefone);
+            Int32 vCo = _Telefones.Where(t => t.DDD == pDDD && t.Numero == pNumero).Count();
+
+            if (vCo > 0)
+                throw new ExTelefoneExistente("Telefone existente");
+            else
+            {
+                Telefone telefone = new Telefone(pTipo, pDDD, pNumero);
+                _Telefones.Add(telefone);
+            }
         }
 
         public void AdicionarEndereco(TipoLogradouro pTipoLogradouro, String pLogradouro, String pNumero, String pComplemento, String pBairro, String pCidade, String pUF, String pCEP)

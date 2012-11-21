@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Infnet.EngSoftSistBancario.Modelo;
+using Infnet.EngSoftSistBancario.Repositorio.Excecoes;
+
 
 namespace Infnet.EngSoftSistBancario.Repositorio
 {
@@ -29,6 +31,7 @@ namespace Infnet.EngSoftSistBancario.Repositorio
             Boolean _result = false;
             try
             {
+                // Implementar verificação para saber se o cliente já foi incluído.
                 _lstCliente.Add(pCliente);
                 _result = true;
             }
@@ -60,11 +63,11 @@ namespace Infnet.EngSoftSistBancario.Repositorio
                 ((PessoaJuridica)c).CNPJ == pCNPJ).Cast<PessoaJuridica>().FirstOrDefault();
         }
 
-        public void DesativarCliente<C>(C pCliente) where C : Cliente
+        public void DesativarCliente(Cliente pCliente)
         {
             Int32 vIndex = _lstCliente.IndexOf(pCliente);
 
-            if (vIndex > 0)
+            if (vIndex >= 0)
                 _lstCliente[vIndex].Desativar();
             else
                 throw new ExClienteNaoEncontrado("Cliente não encontrado");
@@ -74,7 +77,7 @@ namespace Infnet.EngSoftSistBancario.Repositorio
         {
             Int32 vIndex = _lstCliente.IndexOf(pCliente);
 
-            if (vIndex > 0)
+            if (vIndex >= 0)
                 _lstCliente[vIndex].Ativar();
             else
                 throw new ExClienteNaoEncontrado("Cliente não encontrado");
@@ -88,7 +91,8 @@ namespace Infnet.EngSoftSistBancario.Repositorio
 
         public List<C> ListarClientesPotencial<C>() where C : Cliente
         {
-            return _lstCliente.Where(c => c.Status == StatusCliente.Potencial).Cast<C>().ToList();
+            return _lstCliente.Where(c => c.GetType().Name == typeof(C).Name && 
+                c.Status == StatusCliente.Potencial).Cast<C>().ToList();
         }
     }
 }

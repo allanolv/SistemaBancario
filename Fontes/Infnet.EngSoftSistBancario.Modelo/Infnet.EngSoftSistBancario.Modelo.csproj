@@ -46,8 +46,10 @@
     <Compile Include="Cliente\TipoTelefone.cs" />
     <Compile Include="ContaCorrente\ContaCorrente.cs" />
     <Compile Include="ContaCorrente\ContaCorrenteEspecial.cs" />
-    <Compile Include="ContaCorrente\ExSaldoInsuficiente.cs" />
     <Compile Include="ContaCorrente\StatusContaCorrente.cs" />
+    <Compile Include="Excecoes\ExMudarStatusCliente.cs" />
+    <Compile Include="Excecoes\ExSaldoInsuficiente.cs" />
+    <Compile Include="Excecoes\ExTelefoneExistente.cs" />
     <Compile Include="TransacaoBancaria\Comprovante.cs" />
     <Compile Include="TransacaoBancaria\Deposito.cs" />
     <Compile Include="Cliente\Endereco.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="TransacaoBancaria\TransacaoBancaria.cs" />
     <Compile Include="TransacaoBancaria\Transferencia.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

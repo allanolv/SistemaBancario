@@ -62,7 +62,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
         public virtual void Debitar(Decimal pValor)
         {
             if ((_saldo - pValor) < 0)
-                throw new ExSaldoInsuficiente();
+                throw new ExSaldoInsuficiente("Saldo insuficiente");
         }
 
              
