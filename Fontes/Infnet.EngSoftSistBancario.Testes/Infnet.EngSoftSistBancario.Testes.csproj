@@ -49,7 +49,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelo\ClienteTest.cs" />
+    <Compile Include="Modelo\PessoaFisicaTest.cs" />
     <Compile Include="Modelo\ContaCorrenteTest.cs" />
     <Compile Include="Modelo\PessoaJuridicaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

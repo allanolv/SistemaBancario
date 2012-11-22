@@ -15,7 +15,33 @@ namespace Infnet.EngSoftSistBancario.Testes
     public class PessoaJuridicaTest
     {
         PessoaJuridica esperado;
-        
+
+        [Test]
+        public void AtivoTest()
+        {
+            esperado = new PessoaJuridica();
+            esperado.Nome = "Glebson Lima";
+            esperado.Ativar();
+            PessoaJuridica atual;
+            atual = esperado;
+            Assert.AreEqual(atual, esperado);
+
+        }
+
+        [Test]
+        public void InfoBasicoTest()
+        {
+            List<PessoaJuridica> lista = new List<PessoaJuridica>();
+            PessoaJuridica Tel = new PessoaJuridica { Nome = "Glebson Lima", CNPJ = "871.852.323/02", Receita = 2000 };
+            lista.Add(Tel);
+            List<PessoaJuridica> esperado = lista;
+            List<PessoaJuridica> atual;
+            atual = esperado.ToList();
+            Assert.AreEqual(esperado, atual);
+
+
+        }
+
         [Test]
         public void IncluirTelefonesTest()
         {
@@ -39,7 +65,7 @@ namespace Infnet.EngSoftSistBancario.Testes
             Endereco atual = esperado.Enderecos.Where(e => e.CEP == "81547-505").FirstOrDefault();  
             Assert.Contains(atual, esperado.Enderecos);
         }
-
+        [Test]
         public void IncluirEnderecoExistente()
         {
             esperado = new PessoaJuridica();
