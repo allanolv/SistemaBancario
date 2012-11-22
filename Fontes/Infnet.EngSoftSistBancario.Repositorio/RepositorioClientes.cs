@@ -42,12 +42,14 @@ namespace Infnet.EngSoftSistBancario.Repositorio
             return _result;
         }
 
-        public Boolean Alterar<C>(C pCliente) 
+        public Boolean Alterar<C>(C pCliente) where C : Cliente
         {
-            // Pensar depois.
-            // if (pCliente is PessoaFisica)
-
             Boolean _result = false;
+            Int32 vIndex = _lstCliente.IndexOf(pCliente);
+            if (vIndex >= 0)
+                _lstCliente[vIndex] = pCliente;
+            else
+                throw new ExClienteNaoEncontrado("Cliente não encontrado");
             return _result;
         }
 
@@ -68,7 +70,12 @@ namespace Infnet.EngSoftSistBancario.Repositorio
             Int32 vIndex = _lstCliente.IndexOf(pCliente);
 
             if (vIndex >= 0)
-                _lstCliente[vIndex].Desativar();
+            {
+                if (_lstCliente[vIndex].Status == StatusCliente.Potencial)
+                    throw new ExDesativarClientePotencial("Não é possível desativar um cliente em potencial");
+                else
+                    _lstCliente[vIndex].Desativar();
+            }
             else
                 throw new ExClienteNaoEncontrado("Cliente não encontrado");
         }

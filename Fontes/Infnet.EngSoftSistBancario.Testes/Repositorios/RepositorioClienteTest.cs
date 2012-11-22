@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Infnet.EngSoftSistBancario.Modelo;
 using Infnet.EngSoftSistBancario.Repositorio;
+using Infnet.EngSoftSistBancario.Repositorio.Excecoes;
 using NUnit.Framework;
 
 namespace Infnet.EngSoftSistBancario.Testes
@@ -166,10 +167,35 @@ namespace Infnet.EngSoftSistBancario.Testes
             Assert.AreEqual(esperado, atual);
         }
 
+        [Test]
+        public void DesativarClienteEmPotencial()
+        {
+            IncluirUmClientePessoaFisica("601");
+            PessoaFisica esperado = repositorioCliente.ObterCPF("601");
+            Assert.Throws<ExDesativarClientePotencial>(delegate { repositorioCliente.DesativarCliente(esperado); });
+
+        }
+
+        [Test]
         public void AlterarCliente()
         {
+            IncluirUmClientePessoaFisica("701");
+            PessoaFisica esperado = repositorioCliente.ObterCPF("701");
+            esperado.Nome = "DAVID SANBORN";
+            repositorioCliente.Alterar<PessoaFisica>(esperado);
+            PessoaFisica atual = repositorioCliente.ObterCPF("701");
+            Assert.AreEqual(esperado, atual);
+        }
 
 
+        [Test]
+        public void AlterarClienteInexistente()
+        {
+            PessoaFisica esperado = new PessoaFisica();
+            esperado.CPF = "701";
+            esperado.Nome = "Jorge Costa";
+            esperado.Renda = 1000;
+            Assert.Throws<ExClienteNaoEncontrado>(delegate { repositorioCliente.Alterar<PessoaFisica>(esperado); });
         }
     
     }

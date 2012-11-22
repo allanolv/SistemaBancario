@@ -14,6 +14,23 @@ namespace Infnet.EngSoftSistBancario.Modelo
 
         public string Nome { get; set; }
 
+        private Endereco EncontrarEndereco(TipoLogradouro pTipoLogradouro,
+            String pLogradouro, String pNumero, String pComplemento, String pBairro, String pCidade, String pUF, String pCEP)
+        {
+            return _Enderecos.Where(e => e.TipoDeLogradouro == pTipoLogradouro &&
+                e.Logradouro == pLogradouro &&
+                e.Numero == pNumero &&
+                e.Complemento == pComplemento &&
+                e.Bairro == pBairro &&
+                e.Cidade == pCidade &&
+                e.UF == pUF &&
+                e.CEP == pCEP).FirstOrDefault();
+        }
+        private Telefone EncontarTelefone(String pDDD, String pNumero)
+        {
+            return _Telefones.Where(t => t.DDD == pDDD && t.Numero == pNumero).FirstOrDefault();
+        }
+
         public List<Endereco> Enderecos
         {
             get { return _Enderecos; }
@@ -50,22 +67,48 @@ namespace Infnet.EngSoftSistBancario.Modelo
 
         public void AdicionarTelefone(TipoTelefone pTipo, String pDDD, String pNumero)
         {
-            Int32 vCo = _Telefones.Where(t => t.DDD == pDDD && t.Numero == pNumero).Count();
+            Telefone telefone = EncontarTelefone(pDDD,pNumero);
 
-            if (vCo > 0)
+            if (telefone!=null)
                 throw new ExTelefoneExistente("Telefone existente");
             else
             {
-                Telefone telefone = new Telefone(pTipo, pDDD, pNumero);
+                telefone = new Telefone(pTipo, pDDD, pNumero);
                 _Telefones.Add(telefone);
             }
         }
 
         public void AdicionarEndereco(TipoLogradouro pTipoLogradouro, String pLogradouro, String pNumero, String pComplemento, String pBairro, String pCidade, String pUF, String pCEP)
         {
-            Endereco endereco = new Endereco(pTipoLogradouro, pLogradouro, pNumero, pComplemento, pBairro, pCidade, pUF, pCEP);
-            _Enderecos.Add(endereco); 
+            Endereco endereco = EncontrarEndereco(pTipoLogradouro, pLogradouro, pNumero, pComplemento, pBairro, pCidade, pUF, pCEP);
+
+            if (endereco != null)
+                throw new ExEnderecoExistente("Endereço existente");
+            else
+            {
+                endereco = new Endereco(pTipoLogradouro, pLogradouro, pNumero, pComplemento, pBairro, pCidade, pUF, pCEP);
+                _Enderecos.Add(endereco);
+            }
         }
+
+        public void ExcluirTelefone(String pDDD, String pNumero)
+        {
+            Telefone telefone = EncontarTelefone(pDDD,pNumero);
+            if (telefone == null)
+                throw new ExTelefoneInexistente("Telefone inexistente");
+            else
+                _Telefones.Remove(telefone);
+        }
+        public void ExcluirEndereco(TipoLogradouro pTipoLogradouro, String pLogradouro, String pNumero, String pComplemento, String pBairro, String pCidade, String pUF, String pCEP)
+        {
+            Endereco endereco = EncontrarEndereco(pTipoLogradouro, pLogradouro, pNumero, pComplemento, pBairro, pCidade, pUF, pCEP);
+            if (endereco == null)
+                throw new ExEnderecoInexistente("Endereço inexistente");
+            else
+                _Enderecos.Remove(endereco);
+        }
+
+
       
     }
 }

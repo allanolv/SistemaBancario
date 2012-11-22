@@ -47,9 +47,12 @@
     <Compile Include="ContaCorrente\ContaCorrente.cs" />
     <Compile Include="ContaCorrente\ContaCorrenteEspecial.cs" />
     <Compile Include="ContaCorrente\StatusContaCorrente.cs" />
+    <Compile Include="Excecoes\ExEnderecoExistente.cs" />
+    <Compile Include="Excecoes\ExEnderecoInexistente.cs" />
     <Compile Include="Excecoes\ExMudarStatusCliente.cs" />
     <Compile Include="Excecoes\ExSaldoInsuficiente.cs" />
     <Compile Include="Excecoes\ExTelefoneExistente.cs" />
+    <Compile Include="Excecoes\ExTelefoneInexistente.cs" />
     <Compile Include="TransacaoBancaria\Comprovante.cs" />
     <Compile Include="TransacaoBancaria\Deposito.cs" />
     <Compile Include="Cliente\Endereco.cs" />
