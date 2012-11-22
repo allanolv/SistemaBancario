@@ -1,38 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit" total="10" errors="0" failures="1" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-21" time="23:56:26">
+<test-results name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit" total="10" errors="0" failures="3" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-22" time="00:00:46">
   <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5466" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.2\bin" machine-name="PERSONALLAPWIN7" user="henrique" user-domain="PersonalLapWin7" />
   <culture-info current-culture="pt-BR" current-uiculture="pt-BR" />
-  <test-suite type="Project" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit" executed="True" result="Failure" success="False" time="0.170" asserts="0">
+  <test-suite type="Project" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.nunit" executed="True" result="Failure" success="False" time="0.105" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\bin\Debug\Infnet.EngSoftSistBancario.Testes.dll" executed="True" result="Failure" success="False" time="0.169" asserts="0">
+      <test-suite type="Assembly" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\bin\Debug\Infnet.EngSoftSistBancario.Testes.dll" executed="True" result="Failure" success="False" time="0.105" asserts="0">
         <results>
-          <test-suite type="Namespace" name="Infnet" executed="True" result="Failure" success="False" time="0.169" asserts="0">
+          <test-suite type="Namespace" name="Infnet" executed="True" result="Failure" success="False" time="0.105" asserts="0">
             <results>
-              <test-suite type="Namespace" name="EngSoftSistBancario" executed="True" result="Failure" success="False" time="0.168" asserts="0">
+              <test-suite type="Namespace" name="EngSoftSistBancario" executed="True" result="Failure" success="False" time="0.104" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="Testes" executed="True" result="Failure" success="False" time="0.167" asserts="0">
+                  <test-suite type="Namespace" name="Testes" executed="True" result="Failure" success="False" time="0.104" asserts="0">
                     <results>
-                      <test-suite type="TestFixture" name="RepositorioClienteTest" executed="True" result="Failure" success="False" time="0.166" asserts="0">
+                      <test-suite type="TestFixture" name="RepositorioClienteTest" executed="True" result="Failure" success="False" time="0.103" asserts="0">
                         <results>
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.AlterarCliente" executed="True" result="Success" success="True" time="0.011" asserts="1" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.AlterarClienteInexistente" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.AtivarCliente" executed="True" result="Success" success="True" time="0.004" asserts="2" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.DesativarCliente" executed="True" result="Success" success="True" time="0.002" asserts="2" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.DesativarClienteEmPotencial" executed="True" result="Success" success="True" time="0.001" asserts="1" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.IncluirClientePessoaJuridica" executed="True" result="Success" success="True" time="0.002" asserts="1" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.InclusaoClientePessoaFisica" executed="True" result="Success" success="True" time="0.000" asserts="1" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClienteAtivos" executed="True" result="Success" success="True" time="0.005" asserts="2" />
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClientePotencial" executed="True" result="Failure" success="False" time="0.024" asserts="1">
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.AlterarCliente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.AlterarClienteInexistente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.AtivarCliente" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.DesativarCliente" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.DesativarClienteEmPotencial" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.IncluirClientePessoaJuridica" executed="True" result="Failure" success="False" time="0.003" asserts="1">
                             <failure>
-                              <message><![CDATA[  Expected: 4
+                              <message><![CDATA[  Expected: same as <Infnet.EngSoftSistBancario.Modelo.PessoaJuridica>
+  But was:  <Infnet.EngSoftSistBancario.Modelo.PessoaJuridica>
+]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.IncluirClientePessoaJuridica() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClienteTest.cs:line 105
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.InclusaoClientePessoaFisica" executed="True" result="Failure" success="False" time="0.001" asserts="1">
+                            <failure>
+                              <message><![CDATA[  Expected: same as <Infnet.EngSoftSistBancario.Modelo.PessoaFisica>
+  But was:  <Infnet.EngSoftSistBancario.Modelo.PessoaFisica>
+]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.InclusaoClientePessoaFisica() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClienteTest.cs:line 97
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClienteAtivos" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClientePotencial" executed="True" result="Failure" success="False" time="0.001" asserts="1">
+                            <failure>
+                              <message><![CDATA[  Expected: 9
   But was:  1
 ]]></message>
                               <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClientePotencial() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClienteTest.cs:line 163
 ]]></stack-trace>
                             </failure>
                           </test-case>
-                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.TestarInstanciaUnica" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.TestarInstanciaUnica" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                         </results>
                       </test-suite>
                     </results>
