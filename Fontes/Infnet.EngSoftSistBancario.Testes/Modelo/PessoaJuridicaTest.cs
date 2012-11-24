@@ -16,17 +16,7 @@ namespace Infnet.EngSoftSistBancario.Testes
     {
         PessoaJuridica esperado;
 
-        [Test]
-        public void AtivoTest()
-        {
-            esperado = new PessoaJuridica();
-            esperado.Nome = "Glebson Lima";
-            esperado.Ativar();
-            PessoaJuridica atual;
-            atual = esperado;
-            Assert.AreEqual(atual, esperado);
-
-        }
+      
 
         [Test]
         public void InfoBasicoTest()
