@@ -6,7 +6,7 @@ using Infnet.EngSoftSistBancario.Modelo;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public class Especial : ContaCorrente
+    public class ContaCorrenteEspecial : ContaCorrente
     {
         private Decimal _limite;
         public Decimal Limite
@@ -15,7 +15,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
             set { _limite = value; }
         }
 
-        public Especial(Cliente pCliente, String pNumeroConta, Decimal pTarifaMensal, Decimal pLimite)
+        public ContaCorrenteEspecial(Cliente pCliente, String pNumeroConta, Decimal pTarifaMensal, Decimal pLimite)
         {
             _limite = pLimite;
         }

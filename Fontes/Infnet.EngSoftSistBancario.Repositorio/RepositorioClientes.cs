@@ -26,31 +26,33 @@ namespace Infnet.EngSoftSistBancario.Repositorio
         }
 
 
-        public Boolean Inserir<C>(C pCliente) where C : Cliente
+        public void Inserir<C>(C pCliente) where C : Cliente
         {
-            Boolean _result = false;
+            throw new NotImplementedException();
+            /*
             try
             {
                 // Implementar verificação para saber se o cliente já foi incluído.
+                // Para implementar essa parte deve-se resolver o problema de se obter um 
+                // cliente através de seu código de identificação;
+
+                Int32 v = 
                 _lstCliente.Add(pCliente);
-                _result = true;
             }
             catch (Exception e)
             {
                 throw new Exception("Não possível inserir o cliente. " + Environment.NewLine + e.Message);
             }
-            return _result;
+             */
         }
 
-        public Boolean Alterar<C>(C pCliente) where C : Cliente
+        public void Alterar<C>(C pCliente) where C : Cliente
         {
-            Boolean _result = false;
             Int32 vIndex = _lstCliente.IndexOf(pCliente);
             if (vIndex >= 0)
                 _lstCliente[vIndex] = pCliente;
             else
                 throw new ExClienteNaoEncontrado("Cliente não encontrado");
-            return _result;
         }
 
         public PessoaFisica ObterCPF(String pCPF) 
@@ -92,14 +94,14 @@ namespace Infnet.EngSoftSistBancario.Repositorio
 
         public List<C> ListarClientesAtivos<C>() where C : Cliente
         {
-            return _lstCliente.Where(c => c.GetType().Name == typeof(C).Name && 
-                c.Status==StatusCliente.Ativo).Cast<C>().ToList();
+            return _lstCliente.Where(cliente => cliente.GetType().Name == typeof(C).Name && 
+                cliente.Status==StatusCliente.Ativo).Cast<C>().ToList();
         }
 
         public List<C> ListarClientesPotencial<C>() where C : Cliente
         {
-            return _lstCliente.Where(c => c.GetType().Name == typeof(C).Name && 
-                c.Status == StatusCliente.Potencial).Cast<C>().ToList();
+            return _lstCliente.Where(cliente => cliente.GetType().Name == typeof(C).Name && 
+                cliente.Status == StatusCliente.Potencial).Cast<C>().ToList();
         }
     }
 }

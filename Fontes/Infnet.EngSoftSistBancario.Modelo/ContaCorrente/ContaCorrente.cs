@@ -25,7 +25,13 @@ namespace Infnet.EngSoftSistBancario.Modelo
         {
             get { return _status; }
         }
+        
         public Decimal Tarifa { get; set; }
+
+        public Decimal Saldo
+        {
+            get { return _saldo; }
+        }
         
         // Métodos
         public ContaCorrente()
@@ -65,7 +71,5 @@ namespace Infnet.EngSoftSistBancario.Modelo
                 throw new ExSaldoInsuficiente("Saldo insuficiente");
         }
 
-             
-        
     }
 }
