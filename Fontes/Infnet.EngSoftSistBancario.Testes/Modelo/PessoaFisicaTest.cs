@@ -15,22 +15,47 @@ namespace Infnet.EngSoftSistBancario.Testes
     [TestFixture]
     public class PessoaFisicaTest
     {
-        PessoaFisica esperado;
-   
-    
+        PessoaFisica pessoaFisica;
+
+        /// <summary>
+        ///A test for Ativo
+        ///</summary>
+        [Test]
+        public void AtivarCliente()
+        {
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.Ativar();
+            StatusCliente atual = pessoaFisica.Status;
+            StatusCliente esperado = StatusCliente.Ativo;
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [Test]
+        public void DesativarCliente()
+        {
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0005";
+            pessoaFisica.Renda = 10000;
+            Assert.Throws<ExMudarStatusCliente>(delegate { pessoaFisica.Desativar(); });
+
+        }
+
+
         /// <summary>
         ///A test for Enderecos
         ///</summary>
         [Test]
         public void EnderecosTest()
         {
-            esperado = new PessoaFisica();
-            esperado.Nome = "Glebson Lima";
-            esperado.CPF = "871.852.323/02";
-            esperado.Renda = 2000;
-            esperado.AdicionarEndereco(TipoLogradouro.Avenida, "Ernani Cardoso", "500", "apt 240", "Cascadura", "Rio de Janeiro", "RJ", "85411-080");
-            Endereco atual = esperado.Enderecos.Where(e => e.CEP == "85411-080").FirstOrDefault();
-            Assert.Contains(atual, esperado.Enderecos);
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "871.852.323/02";
+            pessoaFisica.Renda = 2000;
+            pessoaFisica.AdicionarEndereco(TipoLogradouro.Avenida, "Ernani Cardoso", "500", "apt 240", "Cascadura", "Rio de Janeiro", "RJ", "85411-080");
+            Endereco atual = pessoaFisica.Enderecos.Where(e => e.CEP == "85411-080").FirstOrDefault();
+            Assert.Contains(atual, pessoaFisica.Enderecos);
         }
 
         /// <summary>
@@ -39,15 +64,15 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void InfoBasicoTest()
         {
-           List<PessoaFisica> lista = new List<PessoaFisica>();
-           PessoaFisica Tel = new PessoaFisica { Nome = "Glebson Lima", CPF = "871.852.323/02", Renda = 2000};
-           lista.Add(Tel);
-           List<PessoaFisica> esperado = lista;
-           List<PessoaFisica> atual;
-           atual = esperado.ToList();
-           Assert.AreEqual(esperado, atual);
-            
-           
+            List<PessoaFisica> lista = new List<PessoaFisica>();
+            pessoaFisica = new PessoaFisica { Nome = "Glebson Lima", CPF = "871.852.323/02", Renda = 2000 };
+            lista.Add(pessoaFisica);
+            List<PessoaFisica> esperado = lista;
+            List<PessoaFisica> atual;
+            atual = esperado.ToList();
+            Assert.AreEqual(esperado, atual);
+
+
         }
 
         /// <summary>
@@ -56,73 +81,71 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void TelefonesTest()
         {
-            esperado = new PessoaFisica();
-            esperado.Nome = "Glebson Lima";
-            esperado.CPF = "871.852.323/02" ;
-            esperado.Renda = 2000;
-            esperado.AdicionarTelefone(TipoTelefone.Celular, "021", "8587-7425");
-            Telefone atual = esperado.Telefones.Where(t => t.Numero == "8587-7425").FirstOrDefault();
-            Assert.Contains(atual, esperado.Telefones);
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "871.852.323/02";
+            pessoaFisica.Renda = 2000;
+            pessoaFisica.AdicionarTelefone(TipoTelefone.Celular, "021", "8587-7425");
+            Telefone atual = pessoaFisica.Telefones.Where(t => t.Numero == "8587-7425").FirstOrDefault();
+            Assert.Contains(atual, pessoaFisica.Telefones);
         }
 
         [Test]
         public void IncluirEnderecoExistente()
         {
-            esperado = new PessoaFisica();
-            esperado.Nome = "Glebson Lima";
-            esperado.CPF = "0002";
-            esperado.Renda = 185000;
-            esperado.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280");
-            Assert.Throws<ExEnderecoExistente>(delegate { esperado.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280"); });
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0002";
+            pessoaFisica.Renda = 185000;
+            pessoaFisica.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280");
+            Assert.Throws<ExEnderecoExistente>(delegate { pessoaFisica.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280"); });
         }
 
         [Test]
         public void IncluirTelefoneExistente()
         {
-            PessoaFisica PessoaFisica = new PessoaFisica();
-            PessoaFisica.Nome = "Glebson Lima";
-            PessoaFisica.CPF = "0003";
-            PessoaFisica.Renda = 10000;
-            PessoaFisica.AdicionarTelefone(TipoTelefone.Celular, "021", "9396-7487");
-            Assert.Throws<ExTelefoneExistente>(delegate { PessoaFisica.AdicionarTelefone(TipoTelefone.Celular, "021", "9396-7487"); });
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0003";
+            pessoaFisica.Renda = 10000;
+            pessoaFisica.AdicionarTelefone(TipoTelefone.Celular, "021", "9396-7487");
+            Assert.Throws<ExTelefoneExistente>(delegate { pessoaFisica.AdicionarTelefone(TipoTelefone.Celular, "021", "9396-7487"); });
         }
 
         [Test]
         public void ExcluirTelefone()
         {
-            PessoaFisica PessoaFisica = new PessoaFisica();
-            PessoaFisica = new PessoaFisica();
-            PessoaFisica.Nome = "Glebson Lima";
-            PessoaFisica.CPF = "0004";
-            PessoaFisica.Renda = 10000;
-            PessoaFisica.AdicionarTelefone(TipoTelefone.Residencial, "021", "2928-0923");
-            PessoaFisica.ExcluirTelefone("021", "2928-0923");
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0004";
+            pessoaFisica.Renda = 10000;
+            pessoaFisica.AdicionarTelefone(TipoTelefone.Residencial, "021", "2928-0923");
+            pessoaFisica.ExcluirTelefone("021", "2928-0923");
             Int32 atual = 0;
-            Int32 esperado = PessoaFisica.Telefones.Count();
+            Int32 esperado = pessoaFisica.Telefones.Count();
             Assert.AreEqual(esperado, atual);
         }
 
         [Test]
         public void ExcluirTelefoneInexistente()
         {
-            PessoaFisica PessoaFisica = new PessoaFisica();
-            PessoaFisica = new PessoaFisica();
-            PessoaFisica.Nome = "Glebson Lima";
-            PessoaFisica.CPF = "0005";
-            PessoaFisica.Renda = 10000;
-            Assert.Throws<ExTelefoneInexistente>(delegate { PessoaFisica.ExcluirTelefone("021", "8720-0012"); });
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0005";
+            pessoaFisica.Renda = 10000;
+            Assert.Throws<ExTelefoneInexistente>(delegate { pessoaFisica.ExcluirTelefone("021", "8720-0012"); });
         }
 
         [Test]
         public void ExcluirEndereco()
         {
-            PessoaFisica PessoaFisica = new PessoaFisica();
-            PessoaFisica.Nome = "Glebson Lima";
-            PessoaFisica.CPF = "0006";
-            PessoaFisica.Renda = 185000;
-            PessoaFisica.AdicionarEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
-            PessoaFisica.ExcluirEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
-            Int32 esperado = PessoaFisica.Enderecos.Count();
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0006";
+            pessoaFisica.Renda = 185000;
+            pessoaFisica.AdicionarEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
+            pessoaFisica.ExcluirEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
+            Int32 esperado = pessoaFisica.Enderecos.Count();
             Int32 atual = 0;
             Assert.AreEqual(esperado, atual);
         }
@@ -130,14 +153,13 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void ExcluirEnderecoInexistente()
         {
-            PessoaFisica PessoaFisica = new PessoaFisica();
-            PessoaFisica = new PessoaFisica();
-            PessoaFisica.Nome = "Glebson Lima";
-            PessoaFisica.CPF = "0007";
-            PessoaFisica.Renda = 10000;
+            pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0007";
+            pessoaFisica.Renda = 10000;
             Assert.Throws<ExEnderecoInexistente>(delegate
             {
-                PessoaFisica.ExcluirEndereco(TipoLogradouro.Avenida,
+                pessoaFisica.ExcluirEndereco(TipoLogradouro.Avenida,
                     "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
             });
         }

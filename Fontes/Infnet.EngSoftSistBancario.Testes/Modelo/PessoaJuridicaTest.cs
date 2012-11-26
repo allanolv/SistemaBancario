@@ -14,16 +14,36 @@ namespace Infnet.EngSoftSistBancario.Testes
     [TestFixture]
     public class PessoaJuridicaTest
     {
-        PessoaJuridica esperado;
+        PessoaJuridica pessoaJuridica;
 
-      
+        [Test]
+        public void AtivarCliente()
+        {
+            pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Glebson Lima";
+            pessoaJuridica.Ativar();
+            StatusCliente atual = pessoaJuridica.Status;
+            StatusCliente esperado = StatusCliente.Ativo;
+            Assert.AreEqual(esperado, atual);
+        }
+
+        [Test]
+        public void DesativarCliente()
+        {
+            pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Glebson Lima";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
+            pessoaJuridica.Receita = 10000;
+            Assert.Throws<ExMudarStatusCliente>(delegate { pessoaJuridica.Desativar(); });
+
+        }
 
         [Test]
         public void InfoBasicoTest()
         {
             List<PessoaJuridica> lista = new List<PessoaJuridica>();
-            PessoaJuridica Tel = new PessoaJuridica { Nome = "Glebson Lima", CNPJ = "871.852.323/02", Receita = 2000 };
-            lista.Add(Tel);
+            pessoaJuridica = new PessoaJuridica { Nome = "Glebson Lima", CNPJ = "36.874.556/0432-67", Receita = 2000 };
+            lista.Add(pessoaJuridica);
             List<PessoaJuridica> esperado = lista;
             List<PessoaJuridica> atual;
             atual = esperado.ToList();
@@ -32,46 +52,36 @@ namespace Infnet.EngSoftSistBancario.Testes
 
         }
 
+       
         [Test]
-        public void IncluirTelefonesTest()
+        public void EnderecosTest()
         {
-            esperado = new PessoaJuridica();
-            esperado.Nome = "Glebson Lima";
-            esperado.CNPJ = "0001";
-            esperado.Receita = 10000;
-            esperado.AdicionarTelefone(TipoTelefone.Celular, "021", "9396-7487");
-            Telefone atual = esperado.Telefones.Where(t => t.Numero == "9396-7487").FirstOrDefault();
-            Assert.Contains(atual, esperado.Telefones);
+            pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Glebson Lima";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
+            pessoaJuridica.Receita = 185000;
+            pessoaJuridica.AdicionarEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
+            Endereco atual = pessoaJuridica.Enderecos.Where(e => e.CEP == "81547-505").FirstOrDefault();
+            Assert.Contains(atual, pessoaJuridica.Enderecos);
         }
 
         [Test]
-        public void IncluirEnderecosTest()
-        {
-            esperado = new PessoaJuridica();
-            esperado.Nome = "Glebson Lima";
-            esperado.CNPJ = "0002";
-            esperado.Receita = 185000;
-            esperado.AdicionarEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
-            Endereco atual = esperado.Enderecos.Where(e => e.CEP == "81547-505").FirstOrDefault();  
-            Assert.Contains(atual, esperado.Enderecos);
-        }
-        [Test]
         public void IncluirEnderecoExistente()
         {
-            esperado = new PessoaJuridica();
-            esperado.Nome = "Glebson Lima";
-            esperado.CNPJ = "0002";
-            esperado.Receita = 185000;
-            esperado.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280");
-            Assert.Throws<ExEnderecoExistente>(delegate { esperado.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280"); });
+            pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Glebson Lima";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
+            pessoaJuridica.Receita = 185000;
+            pessoaJuridica.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280");
+            Assert.Throws<ExEnderecoExistente>(delegate { pessoaJuridica.AdicionarEndereco(TipoLogradouro.Rua, "Maria Carvalho", "80", "", "Padre Miguel", "Rio de Janeiro", "RJ", "21715-280"); });
         }
 
         [Test]
         public void IncluirTelefoneExistente()
         {
-            PessoaJuridica pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica = new PessoaJuridica();
             pessoaJuridica.Nome = "Glebson Lima";
-            pessoaJuridica.CNPJ = "0003";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
             pessoaJuridica.Receita = 10000;
             pessoaJuridica.AdicionarTelefone(TipoTelefone.Celular, "021", "9396-7487");
             Assert.Throws<ExTelefoneExistente>(delegate { pessoaJuridica.AdicionarTelefone(TipoTelefone.Celular, "021", "9396-7487"); });
@@ -80,10 +90,9 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void ExcluirTelefone()
         {
-            PessoaJuridica pessoaJuridica = new PessoaJuridica();
             pessoaJuridica = new PessoaJuridica();
             pessoaJuridica.Nome = "Glebson Lima";
-            pessoaJuridica.CNPJ = "0004";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
             pessoaJuridica.Receita = 10000;
             pessoaJuridica.AdicionarTelefone(TipoTelefone.Residencial, "021", "2928-0923");
             pessoaJuridica.ExcluirTelefone("021", "2928-0923");
@@ -95,10 +104,9 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void ExcluirTelefoneInexistente()
         {
-            PessoaJuridica pessoaJuridica = new PessoaJuridica();
             pessoaJuridica = new PessoaJuridica();
             pessoaJuridica.Nome = "Glebson Lima";
-            pessoaJuridica.CNPJ = "0005";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
             pessoaJuridica.Receita = 10000;
             Assert.Throws<ExTelefoneInexistente>(delegate { pessoaJuridica.ExcluirTelefone("021", "8720-0012"); });
         }
@@ -106,9 +114,9 @@ namespace Infnet.EngSoftSistBancario.Testes
         [Test]
         public void ExcluirEndereco()
         {
-            PessoaJuridica pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica = new PessoaJuridica();
             pessoaJuridica.Nome = "Glebson Lima";
-            pessoaJuridica.CNPJ = "0006";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
             pessoaJuridica.Receita = 185000;
             pessoaJuridica.AdicionarEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
             pessoaJuridica.ExcluirEndereco(TipoLogradouro.Avenida, "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
@@ -118,15 +126,30 @@ namespace Infnet.EngSoftSistBancario.Testes
         }
 
         [Test]
-        public void ExcluirEnderecoInexistente()
+        public void TelefonesTest()
         {
-            PessoaJuridica pessoaJuridica = new PessoaJuridica();
             pessoaJuridica = new PessoaJuridica();
             pessoaJuridica.Nome = "Glebson Lima";
-            pessoaJuridica.CNPJ = "0007";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
+            pessoaJuridica.Receita = 2000;
+            pessoaJuridica.AdicionarTelefone(TipoTelefone.Celular, "021", "8587-7425");
+            Telefone atual = pessoaJuridica.Telefones.Where(t => t.Numero == "8587-7425").FirstOrDefault();
+            Assert.Contains(atual, pessoaJuridica.Telefones);
+        }
+
+
+        [Test]
+        public void ExcluirEnderecoInexistente()
+        {
+            pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Glebson Lima";
+            pessoaJuridica.CNPJ = "36.874.556/0432-67";
             pessoaJuridica.Receita = 10000;
-            Assert.Throws<ExEnderecoInexistente>(delegate { pessoaJuridica.ExcluirEndereco(TipoLogradouro.Avenida, 
-                "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505"); });
+            Assert.Throws<ExEnderecoInexistente>(delegate
+            {
+                pessoaJuridica.ExcluirEndereco(TipoLogradouro.Avenida,
+                    "das Americas", "500", "sala 240", "Barra da Tijuca", "Rio de Janeiro", "RJ", "81547-505");
+            });
         }
 
     }
