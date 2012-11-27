@@ -159,7 +159,7 @@ namespace Infnet.EngSoftSistBancario.Testes
             // Verificar uma forma de lista todos os clientes independente se for Pessoa Física ou Jurídica.
 
             Int32 esperado = repositorioCliente.ListarClientesPotencial<PessoaFisica>().Count();
-            Int32 atual = 1;
+            Int32 atual = 2;
             Assert.AreEqual(esperado, atual);
 
             IncluirUmClientePessoaJuridica("5001");
