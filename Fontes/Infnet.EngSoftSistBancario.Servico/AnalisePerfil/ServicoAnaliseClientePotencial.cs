@@ -10,39 +10,39 @@ namespace Infnet.EngSoftSistBancario.Servico
 {
     public class ServicoAnaliseClientePotencial
     {
-        private Cliente _cliente;
-        private Double _creditoInicial;
-
-        private void IniciaCliente(Cliente pCliente)
+        private String _agencia;
+        public ServicoAnaliseClientePotencial(String pAgencia)
         {
-            _cliente = pCliente;
+            _agencia = pAgencia;
         }
 
-        public ServicoAnaliseClientePotencial(Cliente pCliente)
+        public void Avaliar(Cliente pCliente,  Decimal pTarifaMensal, Decimal pLimiteCredito, Decimal pCreditoInicial)
         {
-            IniciaCliente(pCliente);
-            _creditoInicial = 0;
-        }
-        public ServicoAnaliseClientePotencial(Cliente pCliente, Double pCreditoInicial)
-        {
-            IniciaCliente(pCliente);
-            _creditoInicial = pCreditoInicial;
-        }
-
-        public ContaCorrente Avaliar()
-        {
+            ContaCorrente _contaCorrente = null;
+            ContaCorrenteEspecial _contaCorrenteEspecial = null;
             SAvaliacaoSPC sAvaliacaoSPC = new SAvaliacaoSPC(); 
-            SAvaliacaoSerasa psAvaliacaoSerasa = new SAvaliacaoSerasa();
-            SAvaliacaoPerfil psAvaliacaoPerfil = new SAvaliacaoPerfil(_creditoInicial);
+            SAvaliacaoSerasa sAvaliacaoSerasa = new SAvaliacaoSerasa();
+            SAvaliacaoPerfil sAvaliacaoPerfil = new SAvaliacaoPerfil(pCreditoInicial);
+            RepositorioContaCorrente rRepositorioContaCorrente = RepositorioContaCorrente.Instancia();
+            
 
-            sAvaliacaoSPC.Avaliar(_cliente);
-            psAvaliacaoSerasa.Avaliar(_cliente);
-            Double vValorPerfil = psAvaliacaoPerfil.Avaliar(_cliente);
+            sAvaliacaoSPC.Avaliar(pCliente);
+            sAvaliacaoSerasa.Avaliar(pCliente);
+            Double vValorPerfil = sAvaliacaoPerfil.Avaliar(pCliente);
+
 
             if (vValorPerfil == 1)
-                return new ContaCorrente();
-            else (vValorPerfil==2)
-                return new ContaCorrenteEspecial();
+            {
+                _contaCorrente = rRepositorioContaCorrente.CriarContaCorrente(pCliente, _agencia, pTarifaMensal);
+                _contaCorrente.Creditar(pCreditoInicial);
+                rRepositorioContaCorrente.Alterar<ContaCorrente>(_contaCorrente);
+            }
+            else if (vValorPerfil == 2)
+            {
+                _contaCorrenteEspecial = rRepositorioContaCorrente.CriarContaCorrente(pCliente, _agencia, pTarifaMensal, pLimiteCredito);
+                _contaCorrenteEspecial.Creditar(pCreditoInicial);
+                rRepositorioContaCorrente.Alterar<ContaCorrenteEspecial>(_contaCorrenteEspecial);
+            }
         }
     }
 }

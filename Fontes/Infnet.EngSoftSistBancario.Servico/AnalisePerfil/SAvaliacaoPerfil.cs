@@ -9,9 +9,9 @@ namespace Infnet.EngSoftSistBancario.Servico
 {
     public class SAvaliacaoPerfil : IServicoAvaliacaoPerfilPadrao
     {
-        private Double _creditoInicial = 0;
+        private Decimal _creditoInicial = 0;
 
-        public SAvaliacaoPerfil(Double pCreditoInicial)
+        public SAvaliacaoPerfil(Decimal pCreditoInicial)
         {
             _creditoInicial=pCreditoInicial;
         }
@@ -22,9 +22,9 @@ namespace Infnet.EngSoftSistBancario.Servico
             if (_creditoInicial < 50)
                 throw new ExClienteSemPerfil("Cliente não possui perfil para abrir um conta corrente");
             else if (_creditoInicial >= 50 && _creditoInicial < 10000)
-                vResult = 1;
+                vResult = 1; // Conta Corrente Comum;
             else if (_creditoInicial >= 10000)
-                vResult = 2;
+                vResult = 2; // Conta Corrente Especial
             return vResult;
         }
     }
