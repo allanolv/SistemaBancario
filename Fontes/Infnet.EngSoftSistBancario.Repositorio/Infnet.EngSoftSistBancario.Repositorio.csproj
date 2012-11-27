@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExClienteNaoEncontrado.cs" />
+    <Compile Include="ExContaCorrenteExistente.cs" />
+    <Compile Include="ExContaCorrenteNaoEncontrada.cs" />
     <Compile Include="ExDesativarClientePotencial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioClientes.cs" />

@@ -8,11 +8,44 @@ namespace Infnet.EngSoftSistBancario.Modelo
 {
     public abstract class Cliente
     {
+        private String _documento;
+
         private StatusCliente _status;
         private List<Endereco> _Enderecos;
         private List<Telefone> _Telefones;
 
+        // Atributos
         public string Nome { get; set; }
+
+        public String Documento
+        {
+            get { return _documento; }
+            protected set { _documento = value; }
+        }
+
+        public List<Endereco> Enderecos
+        {
+            get { return _Enderecos; }
+        }
+
+        public List<Telefone> Telefones
+        {
+            get { return _Telefones; }
+        }
+
+        public StatusCliente Status
+        {
+            get { return _status; }
+        }
+
+
+        // Métodos
+        public Cliente()
+        {
+            _status = StatusCliente.Potencial;
+            _Enderecos = new List<Endereco>();
+            _Telefones = new List<Telefone>();
+        }
 
         private Endereco EncontrarEndereco(TipoLogradouro pTipoLogradouro,
             String pLogradouro, String pNumero, String pComplemento, String pBairro, String pCidade, String pUF, String pCEP)
@@ -31,27 +64,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
             return _Telefones.Where(t => t.DDD == pDDD && t.Numero == pNumero).FirstOrDefault();
         }
 
-        public List<Endereco> Enderecos
-        {
-            get { return _Enderecos; }
-        }
-
-        public List<Telefone> Telefones
-        {
-            get { return _Telefones; }
-        }
-
-        public StatusCliente Status
-        {
-            get { return _status; }
-        }
-
-        public Cliente()
-        {
-            _status = StatusCliente.Potencial;
-            _Enderecos = new List<Endereco>();
-            _Telefones = new List<Telefone>();
-        }
+        protected abstract void AlterarNumeroDocumento();
 
         public void Ativar()
         {
@@ -107,8 +120,5 @@ namespace Infnet.EngSoftSistBancario.Modelo
             else
                 _Enderecos.Remove(endereco);
         }
-
-
-      
     }
 }

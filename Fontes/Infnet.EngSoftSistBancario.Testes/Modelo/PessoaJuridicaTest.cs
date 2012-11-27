@@ -14,6 +14,7 @@ namespace Infnet.EngSoftSistBancario.Testes
     [TestFixture]
     public class PessoaJuridicaTest
     {
+<<<<<<< HEAD
         PessoaJuridica pessoaJuridica;
 
         [Test]
@@ -21,12 +22,22 @@ namespace Infnet.EngSoftSistBancario.Testes
         {
             pessoaJuridica = new PessoaJuridica();
             pessoaJuridica.Nome = "Glebson Lima";
+=======
+        PessoaJuridica esperado;
+
+        [Test]
+        public void AtivarClienteTest()
+        {
+            PessoaJuridica pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Carlos";
+>>>>>>> origin/CarlosRepositorioCliente
             pessoaJuridica.Ativar();
             StatusCliente atual = pessoaJuridica.Status;
             StatusCliente esperado = StatusCliente.Ativo;
             Assert.AreEqual(esperado, atual);
         }
 
+<<<<<<< HEAD
         [Test]
         public void DesativarCliente()
         {
@@ -38,6 +49,8 @@ namespace Infnet.EngSoftSistBancario.Testes
 
         }
 
+=======
+>>>>>>> origin/CarlosRepositorioCliente
         [Test]
         public void InfoBasicoTest()
         {
