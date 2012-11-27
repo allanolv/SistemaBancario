@@ -15,7 +15,18 @@ namespace Infnet.EngSoftSistBancario.Testes
     public class PessoaJuridicaTest
     {
         PessoaJuridica esperado;
-        
+
+        [Test]
+        public void AtivarClienteTest()
+        {
+            PessoaJuridica pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Carlos";
+            pessoaJuridica.Ativar();
+            StatusCliente atual = pessoaJuridica.Status;
+            StatusCliente esperado = StatusCliente.Ativo;
+            Assert.AreEqual(esperado, atual);
+        }
+
         [Test]
         public void IncluirTelefonesTest()
         {

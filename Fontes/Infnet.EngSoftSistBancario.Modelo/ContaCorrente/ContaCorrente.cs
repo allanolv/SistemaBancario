@@ -19,6 +19,8 @@ namespace Infnet.EngSoftSistBancario.Modelo
             get { return _titular; }
             set { _titular = value; }
         }
+        
+        public String Agencia { get; set; }
         public String Numero { get; set; }
 
         public StatusContaCorrente Status
