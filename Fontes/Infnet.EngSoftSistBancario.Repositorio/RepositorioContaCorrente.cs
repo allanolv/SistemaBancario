@@ -17,23 +17,23 @@ namespace Infnet.EngSoftSistBancario.Repositorio
             _lstContaCorrente = new List<ContaCorrente>();
         }
 
-        private String GerarNumeroCC()
-        {
-            // Perguntar ao professor e depois fatorar
-            Random random = new Random();
-            Double vNumber = 0 ;
-            Double vDigito = 0;
-            vNumber = random.NextDouble() * 100000;
-            vDigito = vNumber / 9;
-            vDigito = Math.Truncate(vDigito);
-            return System.Math.Round(vNumber).ToString() + "-" + vDigito.ToString().Substring(1, 1);
-        }
-
         public static RepositorioContaCorrente Instancia()
         {
             if (instanciaDoRepositorio == null)
                 instanciaDoRepositorio = new RepositorioContaCorrente();
             return instanciaDoRepositorio;
+        }
+
+        private String GerarNumeroCC()
+        {
+            // Perguntar ao professor e depois fatorar
+            Random random = new Random();
+            Double vNumber = 0;
+            Double vDigito = 0;
+            vNumber = random.NextDouble() * 100000;
+            vDigito = vNumber / 9;
+            vDigito = Math.Truncate(vDigito);
+            return System.Math.Round(vNumber).ToString() + "-" + vDigito.ToString().Substring(1, 1);
         }
 
         public ContaCorrente CriarContaCorrente(Cliente pTitular, String pAgencia, Decimal pTarifaMensal)

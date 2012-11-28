@@ -6,7 +6,7 @@ using Infnet.EngSoftSistBancario.Modelo.Excecoes;
 
 namespace Infnet.EngSoftSistBancario.Modelo
 {
-    public abstract class Cliente
+    public abstract class Cliente : ICloneable
     {
         private String _documento;
 
@@ -119,6 +119,11 @@ namespace Infnet.EngSoftSistBancario.Modelo
                 throw new ExEnderecoInexistente("Endereço inexistente");
             else
                 _Enderecos.Remove(endereco);
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

@@ -30,22 +30,18 @@ namespace Infnet.EngSoftSistBancario.Modelo
         {
             get { return _saldo; }
         }
-        
-        // Métodos
-        public ContaCorrente() 
-        { 
-            /// Refatorar esse método, pois eu não consegui criar a classe de forma que a mesma não tivesse um método construtor sem parâmetro.
-            if (_titular == null || Numero == String.Empty || Tarifa <= 0)
-                throw new Exception("Não possível criar uma conta corrente sem que o titular, número da conta ou tarifa");
-        }
+
+        public ContaCorrente() { }
 
         public ContaCorrente(Cliente pCliente, String pAgencia, String pNumeroConta, Decimal pTarifaMensal)
         {
-            this.Titular = pCliente;
-            this.Agencia = pAgencia;
-            this.Numero = pNumeroConta;
-            this.Tarifa = pTarifaMensal;
+            _titular = pCliente;
+            Agencia = pAgencia;
+            Numero = pNumeroConta;
+            Tarifa = pTarifaMensal;
             _status = StatusContaCorrente.Ativa;
+            if (_titular == null || Numero == String.Empty || Tarifa <= 0)
+                throw new Exception("Não é possível criar uma conta corrente sem que o titular, número da conta ou tarifa");
         }
 
         public void Encerrar()

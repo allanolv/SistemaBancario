@@ -16,10 +16,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
             set { _limite = value; }
         }
 
-        public ContaCorrenteEspecial() 
-        {
-            // Refatorar.. Verifique porque eu não consigo ter uma classe que é tem atencessor que não tenha método construtor sem parâmetros.
-        }
+        public ContaCorrenteEspecial() { }
 
         public ContaCorrenteEspecial(Cliente pCliente, String pAgencia, String pNumeroConta, Decimal pTarifaMensal, Decimal pLimite)
         {

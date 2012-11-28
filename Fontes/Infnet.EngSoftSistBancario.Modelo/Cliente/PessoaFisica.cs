@@ -18,7 +18,7 @@ namespace Infnet.EngSoftSistBancario.Modelo
         // Métodos 
         protected override void AlterarNumeroDocumento()
         {
-            
+            Documento = _cpf;
         }
     }
 }

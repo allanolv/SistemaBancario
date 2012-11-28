@@ -11,11 +11,13 @@ namespace Infnet.EngSoftSistBancario.Repositorio
     public class RepositorioClientes 
     {
         private static RepositorioClientes instanciaDoRepositorio = null;
-        private List<Cliente> _lstCliente;
+        private RepositorioClientePessoaFisica rClientePessoaFisica;
+        private RepositorioClientePessoaJuridica rClientePessoaJuridica;
 
         private RepositorioClientes()
         {
-            _lstCliente = new List<Cliente>();
+            rClientePessoaFisica = RepositorioClientePessoaFisica.Instancia();
+            rClientePessoaJuridica = RepositorioClientePessoaJuridica.Instancia();
         }
 
         public static RepositorioClientes Instancia()
@@ -25,83 +27,20 @@ namespace Infnet.EngSoftSistBancario.Repositorio
             return instanciaDoRepositorio;
         }
 
-
-        public void Inserir<C>(C pCliente) where C : Cliente
+        public List<Cliente> ListarClientesAtivos()
         {
-            throw new NotImplementedException();
-            /*
-            try
-            {
-                // Implementar verificação para saber se o cliente já foi incluído.
-                // Para implementar essa parte deve-se resolver o problema de se obter um 
-                // cliente através de seu código de identificação;
-
-                Int32 v = 
-                _lstCliente.Add(pCliente);
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Não possível inserir o cliente. " + Environment.NewLine + e.Message);
-            }
-             */
+            List<Cliente> vLstCliente = new List<Cliente>();
+            vLstCliente.AddRange(rClientePessoaFisica.ListarClientesAtivos());
+            vLstCliente.AddRange(rClientePessoaJuridica.ListarClientesAtivos());
+            return vLstCliente;
         }
 
-        public void Alterar<C>(C pCliente) where C : Cliente
+        public List<Cliente> ListarClientesPotencial() 
         {
-            Int32 vIndex = _lstCliente.IndexOf(pCliente);
-            if (vIndex >= 0)
-                _lstCliente[vIndex] = pCliente;
-            else
-                throw new ExClienteNaoEncontrado("Cliente não encontrado");
-        }
-
-        public PessoaFisica ObterCPF(String pCPF) 
-        {
-            return _lstCliente.Where(c => c.GetType().Name==typeof(PessoaFisica).Name && 
-                ((PessoaFisica)c).CPF == pCPF).Cast<PessoaFisica>().FirstOrDefault();
-        }
-
-        public PessoaJuridica ObterCNPJ(String pCNPJ)
-        {
-            return _lstCliente.Where(c => c.GetType().Name==typeof(PessoaJuridica).Name && 
-                ((PessoaJuridica)c).CNPJ == pCNPJ).Cast<PessoaJuridica>().FirstOrDefault();
-        }
-
-        public void DesativarCliente(Cliente pCliente)
-        {
-            Int32 vIndex = _lstCliente.IndexOf(pCliente);
-
-            if (vIndex >= 0)
-            {
-                if (_lstCliente[vIndex].Status == StatusCliente.Potencial)
-                    throw new ExDesativarClientePotencial("Não é possível desativar um cliente em potencial");
-                else
-                    _lstCliente[vIndex].Desativar();
-            }
-            else
-                throw new ExClienteNaoEncontrado("Cliente não encontrado");
-        }
-
-        public void AtivarCliente(Cliente pCliente)
-        {
-            Int32 vIndex = _lstCliente.IndexOf(pCliente);
-
-            if (vIndex >= 0)
-                _lstCliente[vIndex].Ativar();
-            else
-                throw new ExClienteNaoEncontrado("Cliente não encontrado");
-        }
-
-        public List<C> ListarClientesAtivos<C>() where C : Cliente
-        {
-            return _lstCliente.Where(cliente => cliente.GetType().Name == typeof(C).Name && 
-                cliente.Status==StatusCliente.Ativo).Cast<C>().ToList();
-        }
-
-        public List<C> ListarClientesPotencial<C>() where C : Cliente
-        {
-            return _lstCliente.Where(cliente => cliente.GetType().Name == typeof(C).Name && 
-                cliente.Status == StatusCliente.Potencial).Cast<C>().ToList();
+            List<Cliente> vLstCliente = new List<Cliente>();
+            vLstCliente.AddRange(rClientePessoaFisica.ListarClientesPotencial());
+            vLstCliente.AddRange(rClientePessoaJuridica.ListarClientesPotencial());
+            return vLstCliente;
         }
     }
 }

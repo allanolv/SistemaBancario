@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExClienteExistente.cs" />
     <Compile Include="ExClienteNaoEncontrado.cs" />
     <Compile Include="ExContaCorrenteExistente.cs" />
     <Compile Include="ExContaCorrenteNaoEncontrada.cs" />
     <Compile Include="ExDesativarClientePotencial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioClientePessoaFisica.cs" />
+    <Compile Include="RepositorioClientePessoaJuridica.cs" />
     <Compile Include="RepositorioClientes.cs" />
     <Compile Include="RepositorioContaCorrente.cs" />
     <Compile Include="RepositorioTransacoesBancarias.cs" />

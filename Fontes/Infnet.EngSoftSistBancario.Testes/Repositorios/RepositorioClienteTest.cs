@@ -16,10 +16,14 @@ namespace Infnet.EngSoftSistBancario.Testes
     public class RepositorioClienteTest
     {
         RepositorioClientes repositorioCliente;
+        RepositorioClientePessoaFisica rClientePessoaFisica;
+        RepositorioClientePessoaJuridica rClientePessoaJuridica;
 
         public RepositorioClienteTest()
         {
             repositorioCliente = RepositorioClientes.Instancia();
+            rClientePessoaFisica = RepositorioClientePessoaFisica.Instancia();
+            rClientePessoaJuridica = RepositorioClientePessoaJuridica.Instancia();
         }
 
         public PessoaFisica IncluirUmClientePessoaFisica(String pCPF)
@@ -39,9 +43,10 @@ namespace Infnet.EngSoftSistBancario.Testes
                 "RJ",
                 "25525-290");
 
-            repositorioCliente.Inserir<PessoaFisica>(pessoaFisica);
+            rClientePessoaFisica.Inserir(pessoaFisica);
             return pessoaFisica;
         }
+
 
         public PessoaJuridica IncluirUmClientePessoaJuridica(String pCNPJ)
         {
@@ -59,24 +64,33 @@ namespace Infnet.EngSoftSistBancario.Testes
                 "RJ",
                 "20010-020");
 
-            repositorioCliente.Inserir<PessoaJuridica>(pessoaJuridica);
+            rClientePessoaJuridica.Inserir(pessoaJuridica);
             return pessoaJuridica;
         }
 
+
         public void DesativarTodosClientes()
         {
-            List<PessoaFisica> listaClientePessoaFisicaAtivos = repositorioCliente.ListarClientesAtivos<PessoaFisica>();
-            foreach (PessoaFisica cliente in listaClientePessoaFisicaAtivos)
+            List<Cliente> listaClientesAtivos = repositorioCliente.ListarClientesAtivos();
+            List<Cliente> listaClientesPotencial = repositorioCliente.ListarClientesPotencial();
+                
+            foreach (Cliente cliente in listaClientesAtivos)
             {
-                repositorioCliente.AtivarCliente(cliente);
-                repositorioCliente.DesativarCliente(cliente);
+                cliente.Desativar();
+                if (cliente is PessoaFisica)
+                    rClientePessoaFisica.Alterar((PessoaFisica)cliente);
+                else 
+                    rClientePessoaJuridica.Alterar((PessoaJuridica)cliente);
             }
 
-            List<PessoaJuridica> listaClientePessoaJuridicaAtivos = repositorioCliente.ListarClientesAtivos<PessoaJuridica>();
-            foreach (PessoaJuridica cliente in listaClientePessoaJuridicaAtivos)
+            foreach (Cliente cliente in listaClientesPotencial)
             {
-                repositorioCliente.AtivarCliente(cliente);
-                repositorioCliente.DesativarCliente(cliente);
+                cliente.Ativar();
+                cliente.Desativar();
+                if (cliente is PessoaFisica)
+                    rClientePessoaFisica.Alterar((PessoaFisica)cliente);
+                else 
+                    rClientePessoaJuridica.Alterar((PessoaJuridica)cliente);
             }
         }
 
@@ -90,113 +104,39 @@ namespace Infnet.EngSoftSistBancario.Testes
         }
 
         [Test]
-        public void InclusaoClientePessoaFisica()
-        {
-            PessoaFisica esperado = IncluirUmClientePessoaFisica("101");
-            PessoaFisica atual = repositorioCliente.ObterCPF("101");
-            Assert.AreSame(esperado, atual);
-        }
-        
-        [Test]
-        public void IncluirClientePessoaJuridica()
-        {
-            PessoaJuridica esperado = IncluirUmClientePessoaJuridica("1001");
-            PessoaJuridica atual = repositorioCliente.ObterCNPJ("1001");
-            Assert.AreSame(esperado, atual);
-        }
-
-        [Test]
-        public void AtivarCliente()
-        {
-            PessoaFisica esperado1 = IncluirUmClientePessoaFisica("201");
-            repositorioCliente.AtivarCliente(esperado1);
-            Assert.AreEqual(StatusCliente.Ativo, esperado1.Status);
-
-            PessoaJuridica esperado2 = IncluirUmClientePessoaJuridica("2001");
-            repositorioCliente.AtivarCliente(esperado2);
-            Assert.AreEqual(StatusCliente.Ativo, esperado2.Status);
-        }
-        
-        [Test]
-        public void DesativarCliente()
-        {
-            PessoaFisica esperado1 = IncluirUmClientePessoaFisica("301");
-            repositorioCliente.AtivarCliente(esperado1);
-            repositorioCliente.DesativarCliente(esperado1);
-            Assert.AreEqual(StatusCliente.Inativo, esperado1.Status);
-
-            PessoaJuridica esperado2 = IncluirUmClientePessoaJuridica("3001");
-            repositorioCliente.AtivarCliente(esperado2);
-            repositorioCliente.DesativarCliente(esperado2);
-            Assert.AreEqual(StatusCliente.Inativo, esperado2.Status);
-        }
-
-        [Test]
         public void ListarClienteAtivos()
         {
             DesativarTodosClientes();
-            IncluirUmClientePessoaFisica("401");
-            PessoaFisica pessoafisica = repositorioCliente.ObterCPF("401");
-            repositorioCliente.AtivarCliente(pessoafisica);
-            Int32 esperado = repositorioCliente.ListarClientesAtivos<PessoaFisica>().Count();
-            Int32 atual = 1;
-            Assert.AreEqual(esperado, atual);
+            IncluirUmClientePessoaFisica("101");
+            PessoaFisica pessoafisica = rClientePessoaFisica.ObterCPF("101");
+            pessoafisica.Ativar();
+            rClientePessoaFisica.Alterar(pessoafisica);
 
-            IncluirUmClientePessoaJuridica("4001");
-            PessoaJuridica pessoaJuridica = repositorioCliente.ObterCNPJ("4001");
-            repositorioCliente.AtivarCliente(pessoaJuridica);
-            esperado = repositorioCliente.ListarClientesAtivos<PessoaJuridica>().Count();
-            Assert.AreEqual(esperado, atual);
+            IncluirUmClientePessoaJuridica("1001");
+            PessoaJuridica pessoaJuridica = rClientePessoaJuridica.ObterCNPJ("1001");
+            pessoaJuridica.Ativar();
+            rClientePessoaJuridica.Alterar(pessoaJuridica);
 
-            // Verificar uma forma de lista todos os clientes independente se for Pessoa Física ou Jurídica.
+            Int32 esperado = repositorioCliente.ListarClientesAtivos().Count();
+            Int32 atual = 2;
+            Assert.AreEqual(esperado, atual);
         }
 
         [Test]
         public void ListarClientePotencial()
         {
             DesativarTodosClientes();
-            IncluirUmClientePessoaFisica("501");
-            // Verificar uma forma de lista todos os clientes independente se for Pessoa Física ou Jurídica.
+            IncluirUmClientePessoaFisica("201");
+            PessoaFisica pessoafisica = rClientePessoaFisica.ObterCPF("201");
+            rClientePessoaFisica.Alterar(pessoafisica);
 
-            Int32 esperado = repositorioCliente.ListarClientesPotencial<PessoaFisica>().Count();
-            Int32 atual = 1;
-            Assert.AreEqual(esperado, atual);
+            IncluirUmClientePessoaJuridica("2001");
+            PessoaJuridica pessoaJuridica = rClientePessoaJuridica.ObterCNPJ("2001");
+            rClientePessoaJuridica.Alterar(pessoaJuridica);
 
-            IncluirUmClientePessoaJuridica("5001");
-            esperado = repositorioCliente.ListarClientesPotencial<PessoaJuridica>().Count();
-            Assert.AreEqual(esperado, atual);
-        }
-
-        [Test]
-        public void DesativarClienteEmPotencial()
-        {
-            IncluirUmClientePessoaFisica("601");
-            PessoaFisica esperado = repositorioCliente.ObterCPF("601");
-            Assert.Throws<ExDesativarClientePotencial>(delegate { repositorioCliente.DesativarCliente(esperado); });
-
-        }
-
-        [Test]
-        public void AlterarCliente()
-        {
-            IncluirUmClientePessoaFisica("701");
-            PessoaFisica esperado = repositorioCliente.ObterCPF("701");
-            esperado.Nome = "DAVID SANBORN";
-            repositorioCliente.Alterar<PessoaFisica>(esperado);
-            PessoaFisica atual = repositorioCliente.ObterCPF("701");
+            Int32 esperado = repositorioCliente.ListarClientesPotencial().Count();
+            Int32 atual = 2;
             Assert.AreEqual(esperado, atual);
         }
-
-
-        [Test]
-        public void AlterarClienteInexistente()
-        {
-            PessoaFisica esperado = new PessoaFisica();
-            esperado.CPF = "701";
-            esperado.Nome = "Jorge Costa";
-            esperado.Renda = 1000;
-            Assert.Throws<ExClienteNaoEncontrado>(delegate { repositorioCliente.Alterar<PessoaFisica>(esperado); });
-        }
-    
     }
 }

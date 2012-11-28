@@ -1,21 +1,150 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Infnet.EngSoftSistBancario.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-20" time="15:44:12">
+<test-results name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Infnet.EngSoftSistBancario.nunit" total="35" errors="7" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-11-27" time="23:30:12">
   <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5466" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.2\bin" machine-name="PERSONALLAPWIN7" user="henrique" user-domain="PersonalLapWin7" />
   <culture-info current-culture="pt-BR" current-uiculture="pt-BR" />
-  <test-suite type="Project" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Infnet.EngSoftSistBancario.nunit" executed="True" result="Success" success="True" time="0.006" asserts="0">
+  <test-suite type="Project" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Infnet.EngSoftSistBancario.nunit" executed="True" result="Failure" success="False" time="0.322" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\bin\Debug\Infnet.EngSoftSistBancario.Testes.dll" executed="True" result="Success" success="True" time="0.006" asserts="0">
+      <test-suite type="Assembly" name="C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\bin\Debug\Infnet.EngSoftSistBancario.Testes.dll" executed="True" result="Failure" success="False" time="0.321" asserts="0">
         <results>
-          <test-suite type="Namespace" name="Infnet" executed="True" result="Success" success="True" time="0.005" asserts="0">
+          <test-suite type="Namespace" name="Infnet" executed="True" result="Failure" success="False" time="0.321" asserts="0">
             <results>
-              <test-suite type="Namespace" name="EngSoftSistBancario" executed="True" result="Success" success="True" time="0.005" asserts="0">
+              <test-suite type="Namespace" name="EngSoftSistBancario" executed="True" result="Failure" success="False" time="0.320" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="MsTestes" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                  <test-suite type="Namespace" name="Testes" executed="True" result="Failure" success="False" time="0.320" asserts="0">
                     <results>
-                      <test-suite type="TestFixture" name="PessoaJuridicaTest" executed="True" result="Success" success="True" time="0.004" asserts="0">
+                      <test-suite type="TestFixture" name="ContaCorrenteTest" executed="True" result="Failure" success="False" time="0.027" asserts="0">
                         <results>
-                          <test-case name="Infnet.EngSoftSistBancario.MsTestes.PessoaJuridicaTest.IncluirTelefonesTest" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.ContaCorrenteTest.CriarContaCorrente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.ContaCorrenteTest.CriarContaCorrenteEspecial" executed="True" result="Error" success="False" time="0.021" asserts="0">
+                            <failure>
+                              <message><![CDATA[System.Exception : Não é possível incluir a conta corrente. 
+Exception of type 'Infnet.EngSoftSistBancario.Repositorio.Excecoes.ExContaCorrenteExistente' was thrown.]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Repositorio.RepositorioContaCorrente.Inserir[CC](CC pContaCorrente) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioContaCorrente.cs:line 67
+at Infnet.EngSoftSistBancario.Repositorio.RepositorioContaCorrente.CriarContaCorrente(Cliente pTitular, String pAgencia, Decimal pTarifaMensal, Decimal pLimite) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioContaCorrente.cs:line 50
+at Infnet.EngSoftSistBancario.Testes.ContaCorrenteTest.CriarContaCorrenteEspecial() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Modelo\ContaCorrenteTest.cs:line 37
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="PessoaFisicaTest" executed="True" result="Success" success="True" time="0.047" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.AtivarCliente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.DesativarCliente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.EnderecosTest" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.ExcluirEndereco" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.ExcluirEnderecoInexistente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.ExcluirTelefone" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.ExcluirTelefoneInexistente" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.IncluirEnderecoExistente" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.IncluirTelefoneExistente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.InfoBasicoTest" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaFisicaTest.TelefonesTest" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="PessoaJuridicaTest" executed="True" result="Success" success="True" time="0.027" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.AtivarCliente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.DesativarCliente" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.EnderecosTest" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.ExcluirEndereco" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.ExcluirEnderecoInexistente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.ExcluirTelefone" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.ExcluirTelefoneInexistente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.IncluirEnderecoExistente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.IncluirTelefoneExistente" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.InfoBasicoTest" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.PessoaJuridicaTest.TelefonesTest" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="RepositorioClientePessoaFisicaTest" executed="True" result="Failure" success="False" time="0.013" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaFisicaTest.Alterar" executed="True" result="Error" success="False" time="0.002" asserts="0">
+                            <failure>
+                              <message><![CDATA[System.Exception : Não foi possível incluir o cliente. 
+Exception of type 'Infnet.EngSoftSistBancario.Repositorio.Excecoes.ExClienteExistente' was thrown.]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Repositorio.RepositorioClientePessoaFisica.Inserir(PessoaFisica pPessoaFisica) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioClientePessoaFisica.cs:line 47
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaFisicaTest.IncluirCliente(String pCPF) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClientePessoaFisicaTest.cs:line 38
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaFisicaTest.Alterar() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClientePessoaFisicaTest.cs:line 54
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaFisicaTest.Incluir" executed="True" result="Error" success="False" time="0.001" asserts="0">
+                            <failure>
+                              <message><![CDATA[System.Exception : Não foi possível incluir o cliente. 
+Exception of type 'Infnet.EngSoftSistBancario.Repositorio.Excecoes.ExClienteExistente' was thrown.]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Repositorio.RepositorioClientePessoaFisica.Inserir(PessoaFisica pPessoaFisica) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioClientePessoaFisica.cs:line 47
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaFisicaTest.IncluirCliente(String pCPF) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClientePessoaFisicaTest.cs:line 38
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaFisicaTest.Incluir() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClientePessoaFisicaTest.cs:line 46
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="RepositorioClientePessoaJuridicaTest" executed="True" result="Failure" success="False" time="0.018" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaJuridicaTest.Alterar" executed="True" result="Error" success="False" time="0.001" asserts="0">
+                            <failure>
+                              <message><![CDATA[System.Exception : Não foi possível incluir o cliente. 
+Exception of type 'Infnet.EngSoftSistBancario.Repositorio.Excecoes.ExClienteExistente' was thrown.]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Repositorio.RepositorioClientePessoaJuridica.Inserir(PessoaJuridica pPessoaJuridica) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioClientePessoaJuridica.cs:line 48
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaJuridicaTest.IncluirUmCliente(String pCNPJ) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\RepositorioClientePessoaJuridicaTest.cs:line 37
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaJuridicaTest.Alterar() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\RepositorioClientePessoaJuridicaTest.cs:line 52
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaJuridicaTest.Incluir" executed="True" result="Error" success="False" time="0.000" asserts="0">
+                            <failure>
+                              <message><![CDATA[System.Exception : Não foi possível incluir o cliente. 
+Exception of type 'Infnet.EngSoftSistBancario.Repositorio.Excecoes.ExClienteExistente' was thrown.]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Repositorio.RepositorioClientePessoaJuridica.Inserir(PessoaJuridica pPessoaJuridica) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioClientePessoaJuridica.cs:line 48
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaJuridicaTest.IncluirUmCliente(String pCNPJ) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\RepositorioClientePessoaJuridicaTest.cs:line 37
+at Infnet.EngSoftSistBancario.Testes.RepositorioClientePessoaJuridicaTest.Incluir() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\RepositorioClientePessoaJuridicaTest.cs:line 44
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="RepositorioClienteTest" executed="True" result="Failure" success="False" time="0.031" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClienteAtivos" executed="True" result="Error" success="False" time="0.002" asserts="0">
+                            <failure>
+                              <message><![CDATA[System.Exception : Não foi possível incluir o cliente. 
+Exception of type 'Infnet.EngSoftSistBancario.Repositorio.Excecoes.ExClienteExistente' was thrown.]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Repositorio.RepositorioClientePessoaFisica.Inserir(PessoaFisica pPessoaFisica) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioClientePessoaFisica.cs:line 47
+at Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.IncluirUmClientePessoaFisica(String pCPF) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClienteTest.cs:line 46
+at Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClienteAtivos() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClienteTest.cs:line 110
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClientePotencial" executed="True" result="Error" success="False" time="0.001" asserts="0">
+                            <failure>
+                              <message><![CDATA[System.Exception : Não foi possível incluir o cliente. 
+Exception of type 'Infnet.EngSoftSistBancario.Repositorio.Excecoes.ExClienteExistente' was thrown.]]></message>
+                              <stack-trace><![CDATA[at Infnet.EngSoftSistBancario.Repositorio.RepositorioClientePessoaFisica.Inserir(PessoaFisica pPessoaFisica) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Repositorio\RepositorioClientePessoaFisica.cs:line 47
+at Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.IncluirUmClientePessoaFisica(String pCPF) in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClienteTest.cs:line 46
+at Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.ListarClientePotencial() in C:\Users\henrique\Documents\GitHub\SistemaBancario\Fontes\Infnet.EngSoftSistBancario.Testes\Repositorios\RepositorioClienteTest.cs:line 129
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioClienteTest.TestarInstanciaUnica" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="RepositorioContaCorrenteTest" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioContaCorrenteTest.TestarInstanciaUnica" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="RepositorioTransacaoBancariaTest" executed="True" result="Success" success="True" time="0.001" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.RepositorioTransacaoBancariaTest.TestarInstanciaUnica" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="SaqueTest" executed="True" result="Success" success="True" time="0.006" asserts="0">
+                        <results>
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.SaqueTest.TestarDataEfetivacao" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="Infnet.EngSoftSistBancario.Testes.SaqueTest.TestarValor" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                         </results>
                       </test-suite>
                     </results>
