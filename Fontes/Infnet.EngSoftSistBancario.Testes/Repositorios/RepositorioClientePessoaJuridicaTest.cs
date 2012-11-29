@@ -5,6 +5,7 @@ using System.Text;
 using Infnet.EngSoftSistBancario.Modelo;
 using Infnet.EngSoftSistBancario.Repositorio;
 using NUnit.Framework;
+using Infnet.EngSoftSistBancario.Repositorio.Excecoes;
 
 namespace Infnet.EngSoftSistBancario.Testes
 {
@@ -46,6 +47,22 @@ namespace Infnet.EngSoftSistBancario.Testes
             Assert.AreSame(esperado, atual);
         }
 
+
+        [Test]
+        public void IncluirClienteExistente()
+        {
+
+            PessoaJuridica pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Banco Banerj";
+            pessoaJuridica.CNPJ = "0003";
+            pessoaJuridica.Receita = 10000;
+            rClientePessoaJuridica.Inserir(pessoaJuridica);
+
+            Assert.Throws<ExClienteExistente>(delegate { rClientePessoaJuridica.Inserir(pessoaJuridica); });
+
+
+        }
+
         [Test]
         public void Alterar()
         {
@@ -55,6 +72,21 @@ namespace Infnet.EngSoftSistBancario.Testes
             rClientePessoaJuridica.Alterar(atual);
             PessoaJuridica esperado = ((PessoaJuridica)rClientePessoaJuridica.ObterCNPJ("0002").Clone());
             Assert.AreEqual(esperado.Nome, atual.Nome);
+        }
+
+        [Test]
+        public void AlterarClienteExistente()
+        {
+
+            PessoaJuridica pessoaJuridica = new PessoaJuridica();
+            pessoaJuridica.Nome = "Lima";
+            pessoaJuridica.CNPJ = "00054";
+            pessoaJuridica.Receita = 18000;
+            rClientePessoaJuridica.Alterar(pessoaJuridica);
+
+            Assert.Throws<ExClienteNaoEncontrado>(delegate { rClientePessoaJuridica.Alterar(pessoaJuridica); });
+
+
         }
     }
 }

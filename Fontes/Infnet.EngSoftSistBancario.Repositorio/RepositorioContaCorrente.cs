@@ -54,32 +54,18 @@ namespace Infnet.EngSoftSistBancario.Repositorio
 
         public void Inserir<CC>(CC pContaCorrente)  where CC : ContaCorrente
         {
-            try
-            {
-                if (ObterContaCorrente<CC>(pContaCorrente.Agencia, pContaCorrente.Numero) != null)
-                    throw new ExContaCorrenteExistente("Conta corrente existente");
-                _lstContaCorrente.Add(pContaCorrente);
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Não é possível incluir a conta corrente. "+Environment.NewLine+e.Message);
-            }
+            if (ObterContaCorrente<CC>(pContaCorrente.Agencia, pContaCorrente.Numero) != null)
+                throw new ExContaCorrenteExistente("Conta corrente existente");
+            _lstContaCorrente.Add(pContaCorrente);
         }
 
         public void Alterar<CC>(CC pContaCorrente) where CC : ContaCorrente
         {
-            try
-            {
-                Int32 vIndex = _lstContaCorrente.IndexOf(pContaCorrente);
-                if (vIndex >= 0)
-                    _lstContaCorrente[vIndex] = pContaCorrente;
-                else
-                    throw new ExContaCorrenteNaoEncontrada("Conta corrente não encontrada");
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Não foi possível alterar a conta corrente. " + Environment.NewLine + e.Message);
-            }
+            Int32 vIndex = _lstContaCorrente.IndexOf(pContaCorrente);
+            if (vIndex >= 0)
+                _lstContaCorrente[vIndex] = pContaCorrente;
+            else
+                throw new ExContaCorrenteNaoEncontrada("Conta corrente não encontrada");
         }
 
         public CC ObterContaCorrente<CC>(String pAgencia, String pNumeroContaCorrente) where CC : ContaCorrente

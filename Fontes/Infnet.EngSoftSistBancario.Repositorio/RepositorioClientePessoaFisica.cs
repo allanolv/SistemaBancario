@@ -33,40 +33,26 @@ namespace Infnet.EngSoftSistBancario.Repositorio
 
         public void Inserir(PessoaFisica pPessoaFisica)
         {
-            try
-            {
-                PessoaFisica pessoafisica = ObterCPF(pPessoaFisica.CPF);
-                if (pessoafisica!=null)
-                    throw new Excecoes.ExClienteExistente("Cliente já existe");
-                _lstCliente.Add(pPessoaFisica);
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Não foi possível incluir o cliente. "+Environment.NewLine+e.Message);
-            }
+            PessoaFisica pessoafisica = ObterCPF(pPessoaFisica.CPF);
+            if (pessoafisica!=null)
+                throw new Excecoes.ExClienteExistente("Cliente já existe");
+            _lstCliente.Add(pPessoaFisica);
         }
 
         public void Alterar(PessoaFisica pPessoaFisica)
         {
-            try
+            PessoaFisica pessoafisica = ObterCPF(pPessoaFisica.CPF);
+            if (pessoafisica != null)
             {
-                PessoaFisica pessoafisica = ObterCPF(pPessoaFisica.CPF);
-                if (pessoafisica != null)
+                PropertyInfo[] campos = pessoafisica.GetType().GetProperties();
+                foreach (PropertyInfo campo in campos)
                 {
-                    PropertyInfo[] campos = pessoafisica.GetType().GetProperties();
-                    foreach (PropertyInfo campo in campos)
-                    {
-                        if (campo.CanWrite)
-                            campo.SetValue(pessoafisica, pPessoaFisica.GetType().GetProperty(campo.Name).GetValue(pPessoaFisica, null), null);
-                    }
+                    if (campo.CanWrite)
+                        campo.SetValue(pessoafisica, pPessoaFisica.GetType().GetProperty(campo.Name).GetValue(pPessoaFisica, null), null);
                 }
-                else
-                    throw new ExClienteNaoEncontrado("Não possível encontrar o cliente cadastrado. ");
             }
-            catch (Exception e)
-            {
-                throw new Exception("Não possível alterar o cliente. " + Environment.NewLine + e.Message);
-            }
+            else
+                throw new ExClienteNaoEncontrado("Não possível encontrar o cliente cadastrado. ");
         }
 
         public List<PessoaFisica> ListarClientesAtivos()

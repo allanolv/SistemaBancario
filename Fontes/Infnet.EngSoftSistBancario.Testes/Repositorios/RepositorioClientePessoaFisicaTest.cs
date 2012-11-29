@@ -5,6 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 using Infnet.EngSoftSistBancario.Modelo;
 using Infnet.EngSoftSistBancario.Repositorio;
+using Infnet.EngSoftSistBancario.Repositorio.Excecoes;
 
 namespace Infnet.EngSoftSistBancario.Testes
 {
@@ -46,6 +47,22 @@ namespace Infnet.EngSoftSistBancario.Testes
             PessoaFisica esperado = IncluirCliente("001");
             PessoaFisica atual = rClientePessoaFisica.ObterCPF("001");
             Assert.AreSame(esperado, atual);
+ 
+        }
+
+
+        [Test]
+        public void IncluirClienteExistente() {
+
+            PessoaFisica pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Glebson Lima";
+            pessoaFisica.CPF = "0003";
+            pessoaFisica.Renda = 10000;
+            rClientePessoaFisica.Inserir(pessoaFisica);
+
+            Assert.Throws<ExClienteExistente>(delegate { rClientePessoaFisica.Inserir(pessoaFisica); });
+          
+        
         }
 
         [Test]
@@ -58,5 +75,23 @@ namespace Infnet.EngSoftSistBancario.Testes
             PessoaFisica esperado = ((PessoaFisica)rClientePessoaFisica.ObterCPF("002").Clone());
             Assert.AreEqual(esperado.Nome, atual.Nome);
         }
+
+
+        [Test]
+        public void AlterarClienteInexistente()
+
+        {
+
+            PessoaFisica pessoaFisica = new PessoaFisica();
+            pessoaFisica.Nome = "Lima";
+            pessoaFisica.CPF = "00054";
+            pessoaFisica.Renda = 18000;
+            rClientePessoaFisica.Alterar(pessoaFisica);
+
+            Assert.Throws<ExClienteNaoEncontrado>(delegate { rClientePessoaFisica.Alterar(pessoaFisica); });
+
+
+        }
+      
     }
 }

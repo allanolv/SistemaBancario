@@ -53,7 +53,7 @@
     <Compile Include="Modelo\ContaCorrenteTest.cs" />
     <Compile Include="Modelo\PessoaJuridicaTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositorioClientePessoaJuridicaTest.cs" />
+    <Compile Include="Repositorios\RepositorioClientePessoaJuridicaTest.cs" />
     <Compile Include="Repositorios\RepositorioClientePessoaFisicaTest.cs" />
     <Compile Include="Repositorios\RepositorioClienteTest.cs" />
     <Compile Include="Repositorios\RepositorioContaCorrenteTest.cs" />

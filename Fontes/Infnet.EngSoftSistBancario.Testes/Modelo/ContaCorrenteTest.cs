@@ -94,5 +94,20 @@ namespace Infnet.EngSoftSistBancario.Testes
 
         }
 
+        //Criar um teste para consultar uma conta corrente depois de incluída
+
+        [Test]
+        public void ConsultarContaExistente() {
+            RepositorioContaCorrente rContaCorrente = RepositorioContaCorrente.Instancia();
+            ContaCorrente contaCorrente = new ContaCorrente();
+            contaCorrente.Agencia = "031";
+            contaCorrente.Numero = "1023";
+            rContaCorrente.Inserir<ContaCorrente>(contaCorrente);
+            rContaCorrente.ObterContaCorrente<ContaCorrente>(contaCorrente.Agencia, contaCorrente.Numero);
+
+          
+        
+        }
+
       }
 }
